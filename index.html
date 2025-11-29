@@ -1,1417 +1,1959 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>InnovateHive — Cutting-Edge Digital Solutions</title>
-    <meta name="description" content="InnovateHive - Professional Web Design, AI Solutions & App Development. Transform your business with cutting-edge technology." />
-    <meta name="og:title" content="InnovateHive - Web Design, AI Solutions & App Development" />
-    <meta name="og:description" content="Cutting-edge technical solutions to elevate your business." />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-    <style>
-      /* ====== PROFESSIONAL CSS RESET & DESIGN SYSTEM ====== */
-      :root {
-        /* Premium Color Palette */
-        --primary: #006b5c;
-        --primary-light: #00a885;
-        --primary-dark: #004d40;
-        --accent: #ff6b35;
-        --accent-light: #ff9a6b;
-        --secondary: #0066cc;
-        --success: #10b981;
-        --warning: #f59e0b;
-        --danger: #ef4444;
-        
-        /* Neutral Palette */
-        --bg-dark: #0a0e27;
-        --bg-darker: #050812;
-        --bg-card: #0f1729;
-        --bg-hover: #1a2847;
-        --text-primary: #f8fafc;
-        --text-secondary: #cbd5e1;
-        --text-muted: #94a3b8;
-        --border: #1e3a5f;
-        --border-light: rgba(255, 255, 255, 0.08);
-        
-        /* Spacing System */
-        --spacing-xs: 4px;
-        --spacing-sm: 8px;
-        --spacing-md: 12px;
-        --spacing-lg: 16px;
-        --spacing-xl: 24px;
-        --spacing-2xl: 32px;
-        --spacing-3xl: 48px;
-        
-        /* Sizing */
-        --radius-sm: 6px;
-        --radius-md: 8px;
-        --radius-lg: 12px;
-        --radius-xl: 16px;
-        --max-width: 1200px;
-        
-        /* Shadows - Premium depth */
-        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.16);
-        --shadow-md: 0 4px 12px 0 rgba(0, 0, 0, 0.24);
-        --shadow-lg: 0 12px 32px 0 rgba(0, 0, 0, 0.32);
-        --shadow-xl: 0 20px 48px 0 rgba(0, 0, 0, 0.4);
-        
-        /* Animations */
-        --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-        --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        --duration-fast: 150ms;
-        --duration-base: 250ms;
-        --duration-slow: 400ms;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      html,
-      body {
-        height: 100%;
-      }
-
-      body {
-        font-family: "Inter", -apple-system, system-ui, "Segoe UI", sans-serif;
-        background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 50%, #0f1a3a 100%);
-        color: var(--text-primary);
-        line-height: 1.6;
-        letter-spacing: 0.3px;
-        overflow-x: hidden;
-      }
-
-      h1, h2, h3, h4, h5, h6 {
-        font-family: "Poppins", "Inter", sans-serif;
-        font-weight: 700;
-        letter-spacing: -0.5px;
-        line-height: 1.2;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-        transition: color var(--duration-fast) var(--ease-smooth);
-      }
-
-      button {
-        font-family: inherit;
-        letter-spacing: 0.3px;
-      }
-
-      /* ====== HEADER & PREMIUM NAVIGATION ====== */
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        background: linear-gradient(180deg, rgba(5, 8, 18, 0.85) 0%, rgba(5, 8, 18, 0.6) 100%);
-        backdrop-filter: blur(20px);
-        border-bottom: 1px solid var(--border-light);
-        padding: var(--spacing-lg) var(--spacing-xl);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-      }
-
-      .nav-container {
-        max-width: var(--max-width);
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: var(--spacing-xl);
-      }
-
-      .logo-section {
-        display: flex;
-        align-items: center;
-        gap: var(--spacing-md);
-        flex-shrink: 0;
-      }
-
-      .logo-icon {
-        width: 44px;
-        height: 44px;
-        border-radius: var(--radius-md);
-        background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent) 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 800;
-        font-size: 16px;
-        color: white;
-        box-shadow: 0 4px 16px rgba(0, 107, 92, 0.3);
-        font-family: "Poppins", sans-serif;
-      }
-
-      .logo-text h2 {
-        margin: 0;
-        font-size: 18px;
-        background: linear-gradient(135deg, var(--primary-light), var(--accent));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .logo-text p {
-        margin: 2px 0 0 0;
-        font-size: 11px;
-        color: var(--text-muted);
-        font-weight: 500;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-      }
-
-      nav ul {
-        display: flex;
-        gap: var(--spacing-lg);
-        list-style: none;
-        align-items: center;
-      }
-
-      nav a {
-        position: relative;
-        padding: var(--spacing-sm) 0;
-        font-size: 14px;
-        font-weight: 500;
-        color: var(--text-secondary);
-      }
-
-      nav a::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: linear-gradient(90deg, var(--primary-light), var(--accent));
-        transition: width var(--duration-base) var(--ease-smooth);
-      }
-
-      nav a:hover {
-        color: var(--primary-light);
-      }
-
-      nav a:hover::before {
-        width: 100%;
-      }
-
-      nav a:focus {
-        outline: 2px solid var(--primary-light);
-        outline-offset: 4px;
-        border-radius: var(--radius-sm);
-      }
-
-      /* ====== MAIN LAYOUT ====== */
-      main {
-        max-width: var(--max-width);
-        margin: 0 auto;
-        padding: var(--spacing-3xl) var(--spacing-xl);
-      }
-
-      /* ====== HERO SECTION - PREMIUM ====== */
-      .hero-section {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: var(--spacing-3xl);
-        align-items: center;
-        margin-bottom: var(--spacing-3xl);
-        position: relative;
-      }
-
-      .hero-section::before {
-        content: "";
-        position: absolute;
-        top: -200px;
-        right: -100px;
-        width: 600px;
-        height: 600px;
-        background: radial-gradient(circle, rgba(0, 107, 92, 0.1), transparent);
-        border-radius: 50%;
-        filter: blur(40px);
-        pointer-events: none;
-      }
-
-      .hero-content {
-        position: relative;
-        z-index: 2;
-      }
-
-      .hero-badge {
-        display: inline-block;
-        padding: var(--spacing-sm) var(--spacing-lg);
-        background: linear-gradient(135deg, rgba(0, 107, 92, 0.15), rgba(255, 107, 53, 0.1));
-        border: 1px solid rgba(0, 107, 92, 0.3);
-        border-radius: var(--radius-xl);
-        font-size: 12px;
-        font-weight: 600;
-        color: var(--primary-light);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: var(--spacing-lg);
-        backdrop-filter: blur(10px);
-      }
-
-      .hero-title {
-        font-size: clamp(32px, 5.5vw, 56px);
-        font-weight: 800;
-        line-height: 1.15;
-        margin-bottom: var(--spacing-lg);
-        background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-light) 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .hero-description {
-        font-size: 16px;
-        line-height: 1.8;
-        color: var(--text-secondary);
-        margin-bottom: var(--spacing-xl);
-        max-width: 500px;
-      }
-
-      .hero-subtext {
-        display: flex;
-        align-items: center;
-        gap: var(--spacing-md);
-        margin-bottom: var(--spacing-2xl);
-        font-size: 15px;
-        color: var(--text-secondary);
-      }
-
-      .hero-subtext .accent-text {
-        color: var(--accent);
-        font-weight: 700;
-        min-width: 120px;
-      }
-
-      .cta-group {
-        display: flex;
-        gap: var(--spacing-md);
-        flex-wrap: wrap;
-      }
-
-      /* ====== BUTTONS - PREMIUM ====== */
-      .btn {
-        padding: var(--spacing-md) var(--spacing-xl);
-        border: none;
-        border-radius: var(--radius-lg);
-        font-size: 14px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all var(--duration-base) var(--ease-smooth);
-        display: inline-flex;
-        align-items: center;
-        gap: var(--spacing-sm);
-        letter-spacing: 0.3px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .btn::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.1);
-        transform: translate(-50%, -50%);
-        transition: width var(--duration-base) var(--ease-smooth), height var(--duration-base) var(--ease-smooth);
-      }
-
-      .btn:hover::before {
-        width: 400px;
-        height: 400px;
-      }
-
-      .btn-primary {
-        background: linear-gradient(135deg, var(--primary-light), var(--primary));
-        color: white;
-        box-shadow: 0 8px 24px rgba(0, 107, 92, 0.3);
-      }
-
-      .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 12px 32px rgba(0, 107, 92, 0.4);
-      }
-
-      .btn-secondary {
-        background: rgba(255, 107, 53, 0.15);
-        color: var(--accent);
-        border: 1px solid var(--accent);
-      }
-
-      .btn-secondary:hover {
-        background: rgba(255, 107, 53, 0.25);
-        box-shadow: 0 8px 24px rgba(255, 107, 53, 0.2);
-      }
-
-      .btn:focus {
-        outline: 2px solid var(--primary-light);
-        outline-offset: 2px;
-      }
-
-      .btn:active {
-        transform: translateY(1px);
-      }
-
-      /* ====== HERO VISUAL ====== */
-      .hero-visual {
-        position: relative;
-        height: 400px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .hero-visual-orb {
-        width: 300px;
-        height: 300px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, rgba(0, 107, 92, 0.15), rgba(255, 107, 53, 0.08));
-        position: relative;
-        animation: float-smooth 6s ease-in-out infinite;
-      }
-
-      .hero-visual-orb::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: 50%;
-        background: radial-gradient(circle at 30% 30%, rgba(0, 171, 149, 0.4), transparent);
-        animation: pulse-glow 4s ease-in-out infinite;
-      }
-
-      @keyframes float-smooth {
-        0%, 100% { transform: translateY(0) translateX(0); }
-        25% { transform: translateY(-20px) translateX(10px); }
-        50% { transform: translateY(-35px) translateX(-10px); }
-        75% { transform: translateY(-20px) translateX(10px); }
-      }
-
-      @keyframes pulse-glow {
-        0%, 100% { transform: scale(1); opacity: 0.6; }
-        50% { transform: scale(1.1); opacity: 0.8; }
-      }
-
-      /* ====== BLOG SECTION ====== */
-      .section-header {
-        margin-bottom: var(--spacing-2xl);
-      }
-
-      .section-title {
-        font-size: 32px;
-        font-weight: 800;
-        margin-bottom: var(--spacing-lg);
-        color: var(--text-primary);
-      }
-
-      .section-subtitle {
-        color: var(--text-secondary);
-        font-size: 15px;
-      }
-
-      .controls {
-        display: flex;
-        gap: var(--spacing-md);
-        align-items: center;
-        margin-bottom: var(--spacing-2xl);
-        flex-wrap: wrap;
-      }
-
-      .search-container {
-        flex: 1;
-        display: flex;
-        gap: var(--spacing-sm);
-        min-width: 260px;
-        position: relative;
-      }
-
-      .search-container input {
-        flex: 1;
-        padding: var(--spacing-md) var(--spacing-lg);
-        background: var(--bg-card);
-        border: 1px solid var(--border);
-        border-radius: var(--radius-lg);
-        color: var(--text-primary);
-        font-size: 14px;
-        transition: all var(--duration-base) var(--ease-smooth);
-        font-family: inherit;
-      }
-
-      .search-container input::placeholder {
-        color: var(--text-muted);
-      }
-
-      .search-container input:focus {
-        border-color: var(--primary-light);
-        background: var(--bg-hover);
-        box-shadow: 0 0 0 3px rgba(0, 107, 92, 0.1);
-        outline: none;
-      }
-
-      /* ====== BLOG GRID & CARDS ====== */
-      .blog-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: var(--spacing-xl);
-        margin-bottom: var(--spacing-2xl);
-      }
-
-      .blog-card {
-        background: linear-gradient(135deg, var(--bg-card) 0%, rgba(15, 23, 41, 0.5) 100%);
-        border: 1px solid var(--border);
-        border-radius: var(--radius-xl);
-        padding: var(--spacing-xl);
-        cursor: pointer;
-        transition: all var(--duration-base) var(--ease-smooth);
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        min-height: 280px;
-      }
-
-      .blog-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
-        transition: left var(--duration-slow) var(--ease-smooth);
-      }
-
-      .blog-card:hover::before {
-        left: 100%;
-      }
-
-      .blog-card:hover {
-        border-color: var(--primary-light);
-        background: linear-gradient(135deg, rgba(0, 107, 92, 0.1) 0%, rgba(15, 23, 41, 0.6) 100%);
-        transform: translateY(-8px);
-        box-shadow: 0 20px 48px rgba(0, 107, 92, 0.2);
-      }
-
-      .blog-card:focus {
-        outline: 2px solid var(--primary-light);
-        outline-offset: -1px;
-      }
-
-      .blog-card-tag {
-        display: inline-block;
-        padding: var(--spacing-xs) var(--spacing-sm);
-        background: rgba(0, 107, 92, 0.2);
-        color: var(--primary-light);
-        border-radius: var(--radius-sm);
-        font-size: 11px;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        margin-bottom: var(--spacing-md);
-        width: fit-content;
-      }
-
-      .blog-card-title {
-        font-size: 18px;
-        font-weight: 700;
-        margin-bottom: var(--spacing-md);
-        line-height: 1.4;
-        color: var(--text-primary);
-      }
-
-      .blog-card-excerpt {
-        color: var(--text-secondary);
-        font-size: 14px;
-        line-height: 1.7;
-        flex-grow: 1;
-        margin-bottom: var(--spacing-lg);
-      }
-
-      .blog-card-meta {
-        display: flex;
-        gap: var(--spacing-md);
-        color: var(--text-muted);
-        font-size: 12px;
-        padding-top: var(--spacing-md);
-        border-top: 1px solid var(--border-light);
-      }
-
-      .empty-state {
-        text-align: center;
-        padding: var(--spacing-3xl) var(--spacing-xl);
-        color: var(--text-muted);
-      }
-
-      .empty-state h3 {
-        font-size: 20px;
-        margin-bottom: var(--spacing-md);
-        color: var(--text-secondary);
-      }
-
-      /* ====== POST VIEW ====== */
-      .post-container {
-        background: linear-gradient(135deg, var(--bg-card) 0%, rgba(15, 23, 41, 0.5) 100%);
-        border: 1px solid var(--border);
-        border-radius: var(--radius-xl);
-        padding: var(--spacing-2xl);
-        max-width: 900px;
-        margin: 0 auto;
-      }
-
-      .post-header {
-        margin-bottom: var(--spacing-2xl);
-        padding-bottom: var(--spacing-2xl);
-        border-bottom: 1px solid var(--border-light);
-      }
-
-      .post-title {
-        font-size: 36px;
-        font-weight: 800;
-        margin-bottom: var(--spacing-lg);
-        line-height: 1.3;
-      }
-
-      .post-meta {
-        display: flex;
-        gap: var(--spacing-lg);
-        color: var(--text-secondary);
-        font-size: 14px;
-        flex-wrap: wrap;
-      }
-
-      .post-meta-item {
-        display: flex;
-        align-items: center;
-        gap: var(--spacing-sm);
-      }
-
-      .post-image {
-        width: 100%;
-        height: 300px;
-        border-radius: var(--radius-xl);
-        background: linear-gradient(135deg, rgba(0, 107, 92, 0.1), rgba(255, 107, 53, 0.05));
-        margin-bottom: var(--spacing-2xl);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid var(--border);
-      }
-
-      .post-content {
-        font-size: 16px;
-        line-height: 1.8;
-        color: var(--text-secondary);
-        margin-bottom: var(--spacing-2xl);
-      }
-
-      .post-actions {
-        display: flex;
-        gap: var(--spacing-lg);
-        margin-bottom: var(--spacing-2xl);
-        padding-bottom: var(--spacing-2xl);
-        border-bottom: 1px solid var(--border-light);
-        flex-wrap: wrap;
-      }
-
-      .recommended-section {
-        margin-bottom: var(--spacing-2xl);
-      }
-
-      .recommended-section h4 {
-        font-size: 16px;
-        margin-bottom: var(--spacing-md);
-        color: var(--text-secondary);
-      }
-
-      .recommended-posts {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: var(--spacing-md);
-      }
-
-      .recommended-posts .btn {
-        font-size: 13px;
-        padding: var(--spacing-sm) var(--spacing-md);
-      }
-
-      .comments-section {
-        margin-top: var(--spacing-2xl);
-        padding-top: var(--spacing-2xl);
-        border-top: 1px solid var(--border-light);
-      }
-
-      .comments-section h4 {
-        font-size: 18px;
-        font-weight: 700;
-        margin-bottom: var(--spacing-lg);
-      }
-
-      .comment-form {
-        background: rgba(0, 107, 92, 0.05);
-        border: 1px solid var(--border);
-        border-radius: var(--radius-lg);
-        padding: var(--spacing-xl);
-        margin-top: var(--spacing-lg);
-      }
-
-      .comment-form input,
-      .comment-form textarea {
-        width: 100%;
-        padding: var(--spacing-md) var(--spacing-lg);
-        background: var(--bg-card);
-        border: 1px solid var(--border);
-        border-radius: var(--radius-md);
-        color: var(--text-primary);
-        font-family: inherit;
-        font-size: 14px;
-        margin-bottom: var(--spacing-md);
-        transition: all var(--duration-base) var(--ease-smooth);
-      }
-
-      .comment-form input::placeholder,
-      .comment-form textarea::placeholder {
-        color: var(--text-muted);
-      }
-
-      .comment-form input:focus,
-      .comment-form textarea:focus {
-        border-color: var(--primary-light);
-        background: var(--bg-hover);
-        outline: none;
-      }
-
-      .comment-form textarea {
-        resize: vertical;
-        min-height: 100px;
-      }
-
-      /* ====== FOOTER - PREMIUM ====== */
-      footer {
-        background: linear-gradient(180deg, rgba(5, 8, 18, 0.6), rgba(5, 8, 18, 0.95));
-        border-top: 1px solid var(--border-light);
-        padding: var(--spacing-3xl) var(--spacing-xl);
-        margin-top: var(--spacing-3xl);
-        backdrop-filter: blur(20px);
-      }
-
-      .footer-content {
-        max-width: var(--max-width);
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: var(--spacing-2xl);
-        margin-bottom: var(--spacing-2xl);
-      }
-
-      .footer-section h3 {
-        font-size: 14px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: var(--spacing-lg);
-        color: var(--primary-light);
-      }
-
-      .footer-section a {
-        display: block;
-        color: var(--text-secondary);
-        margin-bottom: var(--spacing-md);
-        font-size: 14px;
-        transition: color var(--duration-base) var(--ease-smooth);
-      }
-
-      .footer-section a:hover {
-        color: var(--primary-light);
-      }
-
-      .footer-bottom {
-        max-width: var(--max-width);
-        margin: 0 auto;
-        padding-top: var(--spacing-2xl);
-        border-top: 1px solid var(--border-light);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: var(--spacing-lg);
-        color: var(--text-muted);
-        font-size: 13px;
-      }
-
-      /* ====== PROGRESS BAR ====== */
-      .progress-bar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 3px;
-        background: linear-gradient(90deg, var(--primary-light) 0%, var(--accent) 100%);
-        width: 0;
-        transition: width var(--duration-base) var(--ease-smooth);
-        z-index: 2000;
-        box-shadow: 0 0 12px rgba(0, 107, 92, 0.6);
-      }
-
-      /* ====== GREETING MODAL - PREMIUM ====== */
-      .modal-backdrop {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.6);
-        backdrop-filter: blur(8px);
-        z-index: 1500;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: var(--spacing-xl);
-      }
-
-      .modal {
-        background: linear-gradient(135deg, var(--bg-card) 0%, rgba(15, 23, 41, 0.6) 100%);
-        border: 1px solid var(--border);
-        border-radius: var(--radius-xl);
-        padding: var(--spacing-2xl);
-        max-width: 500px;
-        width: 100%;
-        box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
-        animation: modal-slide-in var(--duration-base) var(--ease-smooth);
-      }
-
-      @keyframes modal-slide-in {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .modal h3 {
-        font-size: 24px;
-        font-weight: 700;
-        margin-bottom: var(--spacing-md);
-        color: var(--text-primary);
-      }
-
-      .modal p {
-        color: var(--text-secondary);
-        margin-bottom: var(--spacing-xl);
-        line-height: 1.7;
-      }
-
-      .modal-buttons {
-        display: flex;
-        gap: var(--spacing-md);
-        flex-direction: column;
-      }
-
-      /* ====== RESPONSIVE DESIGN ====== */
-      @media (max-width: 768px) {
-        .hero-section {
-          grid-template-columns: 1fr;
-          gap: var(--spacing-2xl);
-        }
-
-        .hero-visual {
-          height: 300px;
-        }
-
-        .hero-visual-orb {
-          width: 220px;
-          height: 220px;
-        }
-
-        .section-title {
-          font-size: 24px;
-        }
-
-        .post-title {
-          font-size: 28px;
-        }
-
-        .blog-grid {
-          grid-template-columns: 1fr;
-        }
-
-        nav ul {
-          gap: var(--spacing-md);
-        }
-
-        nav a {
-          font-size: 13px;
-        }
-
-        .footer-content {
-          grid-template-columns: 1fr;
-        }
-
-        .footer-bottom {
-          flex-direction: column;
-          text-align: center;
-        }
-
-        .cta-group {
-          flex-direction: column;
-        }
-
-        .cta-group .btn {
-          width: 100%;
-          justify-content: center;
-        }
-      }
-
-      /* ====== SERVICES PAGE ====== */
-      .services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: var(--spacing-xl);
-        margin-top: var(--spacing-2xl);
-      }
-
-      .service-card {
-        background: linear-gradient(135deg, var(--bg-card) 0%, rgba(15, 23, 41, 0.5) 100%);
-        border: 1px solid var(--border);
-        border-radius: var(--radius-xl);
-        padding: var(--spacing-xl);
-        transition: all var(--duration-base) var(--ease-smooth);
-        position: relative;
-        overflow: hidden;
-        min-height: 380px;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .service-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
-        transition: left var(--duration-slow) var(--ease-smooth);
-      }
-
-      .service-card:hover::before {
-        left: 100%;
-      }
-
-      .service-card:hover {
-        border-color: var(--primary-light);
-        background: linear-gradient(135deg, rgba(0, 107, 92, 0.1) 0%, rgba(15, 23, 41, 0.6) 100%);
-        transform: translateY(-8px);
-        box-shadow: 0 20px 48px rgba(0, 107, 92, 0.2);
-      }
-
-      .service-icon {
-        font-size: 48px;
-        margin-bottom: var(--spacing-lg);
-        display: inline-block;
-      }
-
-      .service-card h3 {
-        font-size: 20px;
-        margin-bottom: var(--spacing-md);
-        color: var(--text-primary);
-      }
-
-      .service-card p {
-        color: var(--text-secondary);
-        font-size: 14px;
-        line-height: 1.7;
-        flex-grow: 1;
-        margin-bottom: var(--spacing-lg);
-      }
-
-      .service-features {
-        list-style: none;
-        margin-top: var(--spacing-lg);
-        padding-top: var(--spacing-lg);
-        border-top: 1px solid var(--border-light);
-      }
-
-      .service-features li {
-        color: var(--text-secondary);
-        font-size: 13px;
-        margin-bottom: var(--spacing-sm);
-        padding-left: var(--spacing-md);
-        position: relative;
-      }
-
-      .service-features li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        color: var(--primary-light);
-        font-weight: 700;
-      }
-
-      /* ====== CONTACT PAGE ====== */
-      .contact-container {
-        max-width: 1100px;
-        margin: 0 auto;
-      }
-
-      .contact-header {
-        text-align: center;
-        margin-bottom: var(--spacing-3xl);
-      }
-
-      .contact-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: var(--spacing-2xl);
-      }
-
-      .contact-form-section {
-        background: linear-gradient(135deg, var(--bg-card) 0%, rgba(15, 23, 41, 0.5) 100%);
-        border: 1px solid var(--border);
-        border-radius: var(--radius-xl);
-        padding: var(--spacing-2xl);
-      }
-
-      .contact-form-section h3 {
-        font-size: 20px;
-        margin-bottom: var(--spacing-xl);
-        color: var(--text-primary);
-      }
-
-      .contact-form {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-lg);
-      }
-
-      .form-group {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-sm);
-      }
-
-      .form-group label {
-        font-size: 14px;
-        font-weight: 600;
-        color: var(--text-secondary);
-      }
-
-      .form-group input,
-      .form-group select,
-      .form-group textarea {
-        padding: var(--spacing-md) var(--spacing-lg);
-        background: var(--bg-hover);
-        border: 1px solid var(--border);
-        border-radius: var(--radius-lg);
-        color: var(--text-primary);
-        font-family: inherit;
-        font-size: 14px;
-        transition: all var(--duration-base) var(--ease-smooth);
-      }
-
-      .form-group input::placeholder,
-      .form-group textarea::placeholder {
-        color: var(--text-muted);
-      }
-
-      .form-group input:focus,
-      .form-group select:focus,
-      .form-group textarea:focus {
-        border-color: var(--primary-light);
-        background: rgba(0, 168, 133, 0.05);
-        box-shadow: 0 0 0 3px rgba(0, 168, 133, 0.1);
-        outline: none;
-      }
-
-      .form-group textarea {
-        resize: vertical;
-        min-height: 120px;
-      }
-
-      .contact-info-section {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-lg);
-      }
-
-      .contact-info-section h3 {
-        font-size: 20px;
-        margin-bottom: var(--spacing-lg);
-        color: var(--text-primary);
-      }
-
-      .contact-info-card {
-        background: linear-gradient(135deg, var(--bg-card) 0%, rgba(15, 23, 41, 0.5) 100%);
-        border: 1px solid var(--border);
-        border-radius: var(--radius-xl);
-        padding: var(--spacing-xl);
-        display: flex;
-        gap: var(--spacing-lg);
-        align-items: flex-start;
-        transition: all var(--duration-base) var(--ease-smooth);
-      }
-
-      .contact-info-card:hover {
-        border-color: var(--primary-light);
-        background: linear-gradient(135deg, rgba(0, 107, 92, 0.1) 0%, rgba(15, 23, 41, 0.6) 100%);
-        transform: translateY(-4px);
-        box-shadow: 0 12px 32px rgba(0, 107, 92, 0.15);
-      }
-
-      .contact-icon {
-        font-size: 32px;
-        min-width: 48px;
-        text-align: center;
-      }
-
-      .contact-detail {
-        flex: 1;
-      }
-
-      .contact-detail h4 {
-        font-size: 16px;
-        margin-bottom: var(--spacing-sm);
-        color: var(--text-primary);
-      }
-
-      .contact-detail p,
-      .contact-detail a {
-        color: var(--text-secondary);
-        font-size: 14px;
-        margin-bottom: var(--spacing-sm);
-        display: block;
-      }
-
-      .contact-detail a {
-        color: var(--primary-light);
-        font-weight: 500;
-        transition: color var(--duration-base) var(--ease-smooth);
-      }
-
-      .contact-detail a:hover {
-        color: var(--accent);
-      }
-
-      .social-links {
-        display: flex;
-        gap: var(--spacing-md);
-        flex-wrap: wrap;
-      }
-
-      .social-links a {
-        padding: var(--spacing-sm) var(--spacing-md);
-        background: rgba(0, 168, 133, 0.1);
-        border: 1px solid rgba(0, 168, 133, 0.3);
-        border-radius: var(--radius-md);
-        font-size: 13px;
-        font-weight: 500;
-      }
-
-      .social-links a:hover {
-        background: rgba(0, 168, 133, 0.2);
-        border-color: var(--primary-light);
-      }
-
-      /* ====== CONTACT PAGE RESPONSIVE ====== */
-      @media (max-width: 900px) {
-        .contact-content {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      /* ====== ACCESSIBILITY & REDUCED MOTION ====== */
-      @media (prefers-reduced-motion: reduce) {
-        * {
-          animation-duration: 0.01ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.01ms !important;
-        }
-
-        .hero-visual-orb {
-          animation: none;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Progress Bar -->
-    <div class="progress-bar" id="progress"></div>
-
-    <!-- Header -->
-    <header>
-      <div class="nav-container">
-        <div class="logo-section">
-          <div class="logo-icon" aria-hidden="true">◆</div>
-          <div class="logo-text">
-            <h2>InnovateHive</h2>
-            <p>Digital Solutions</p>
-          </div>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>InnovateHive — Cutting-Edge Digital Solutions</title>
+  <meta name="description"
+    content="InnovateHive - Professional Web Design, AI Solutions & App Development. Transform your business with cutting-edge technology." />
+  <meta name="og:title" content="InnovateHive - Web Design, AI Solutions & App Development" />
+  <meta name="og:description" content="Cutting-edge technical solutions to elevate your business." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+  /* ====== PROFESSIONAL CSS RESET & DESIGN SYSTEM ====== */
+  :root {
+    /* Premium Color Palette */
+    --primary: #006b5c;
+    --primary-light: #00a885;
+    --primary-dark: #004d40;
+    --accent: #ff6b35;
+    --accent-light: #ff9a6b;
+    --secondary: #0066cc;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+
+    /* Dark Theme (Default) */
+    --bg-dark: #0a0e27;
+    --bg-darker: #050812;
+    --bg-card: #0f1729;
+    --bg-hover: #1a2847;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --border: #1e3a5f;
+    --border-light: rgba(255, 255, 255, 0.08);
+
+    /* Spacing System */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
+    --spacing-xl: 24px;
+    --spacing-2xl: 32px;
+    --spacing-3xl: 48px;
+
+    /* Sizing */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --max-width: 1200px;
+
+    /* Shadows - Premium depth */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.16);
+    --shadow-md: 0 4px 12px 0 rgba(0, 0, 0, 0.24);
+    --shadow-lg: 0 12px 32px 0 rgba(0, 0, 0, 0.32);
+    --shadow-xl: 0 20px 48px 0 rgba(0, 0, 0, 0.4);
+
+    /* Animations */
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --duration-fast: 150ms;
+    --duration-base: 250ms;
+    --duration-slow: 400ms;
+  }
+
+  /* Light Mode - Premium & Professional */
+  :root[data-theme="light"] {
+    /* Backgrounds - Sophisticated Light Palette */
+    --bg-dark: #fafbfc;
+    --bg-darker: #f5f7fa;
+    --bg-card: #ffffff;
+    --bg-hover: #f0f4f9;
+    --text-primary: #0d1118;
+    --text-secondary: #424a53;
+    --text-muted: #57606a;
+    --border: #d8dce1;
+    --border-light: rgba(13, 17, 24, 0.05);
+    --shadow-sm: 0 1px 3px rgba(13, 17, 24, 0.12);
+    --shadow-md: 0 4px 14px rgba(13, 17, 24, 0.15);
+    --shadow-lg: 0 10px 28px rgba(13, 17, 24, 0.12);
+    --shadow-xl: 0 16px 40px rgba(13, 17, 24, 0.14);
+  }
+
+
+  body {
+    transition: background-color var(--duration-base) var(--ease-smooth), color var(--duration-base) var(--ease-smooth);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    font-family: "Inter", -apple-system, system-ui, "Segoe UI", sans-serif;
+    /* This gradient is for DARK MODE only */
+    background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 50%, #0f1a3a 100%);
+    color: var(--text-primary);
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Poppins", "Inter", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-smooth);
+  }
+
+  button {
+    font-family: inherit;
+    letter-spacing: 0.3px;
+  }
+
+  /* ====== HEADER & PREMIUM NAVIGATION ====== */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: linear-gradient(180deg, rgba(5, 8, 18, 0.85) 0%, rgba(5, 8, 18, 0.6) 100%);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-light);
+    padding: var(--spacing-lg) var(--spacing-xl);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-xl);
+  }
+
+  .logo-section {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex-shrink: 0;
+  }
+
+  .logo-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 16px;
+    color: white;
+    box-shadow: 0 4px 16px rgba(0, 107, 92, 0.3);
+    font-family: "Poppins", sans-serif;
+  }
+
+  .logo-text h2 {
+    margin: 0;
+    font-size: 18px;
+    background: linear-gradient(135deg, var(--primary-light), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .logo-text p {
+    margin: 2px 0 0 0;
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  nav ul {
+    display: flex;
+    gap: var(--spacing-lg);
+    list-style: none;
+    align-items: center;
+  }
+
+  nav a {
+    position: relative;
+    padding: var(--spacing-sm) 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+
+  nav a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-light), var(--accent));
+    transition: width var(--duration-base) var(--ease-smooth);
+  }
+
+  nav a:hover {
+    color: var(--primary-light);
+  }
+
+  nav a:hover::before {
+    width: 100%;
+  }
+
+  nav a:focus {
+    outline: 2px solid var(--primary-light);
+    outline-offset: 4px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* ====== THEME TOGGLE ====== */
+  .theme-toggle {
+    background: rgba(0, 168, 133, 0.1);
+    border: 1px solid var(--border);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    font-size: 16px;
+    transition: all var(--duration-base) var(--ease-smooth);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .theme-toggle:hover {
+    background: rgba(0, 168, 133, 0.2);
+    border-color: var(--primary-light);
+  }
+
+  .theme-toggle:focus {
+    outline: 2px solid var(--primary-light);
+    outline-offset: 2px;
+  }
+
+  .theme-icon {
+    display: inline-block;
+    transition: transform var(--duration-base) var(--ease-smooth);
+  }
+
+  .theme-toggle:hover .theme-icon {
+    transform: rotate(20deg);
+  }
+
+  main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-3xl) var(--spacing-xl);
+  }
+
+  /* ====== HERO SECTION - PREMIUM ====== */
+  .hero-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-3xl);
+    align-items: center;
+    margin-bottom: var(--spacing-3xl);
+    position: relative;
+  }
+
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    top: -200px;
+    right: -100px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 107, 92, 0.1), transparent);
+    border-radius: 50%;
+    filter: blur(40px);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: linear-gradient(135deg, rgba(0, 107, 92, 0.15), rgba(255, 107, 53, 0.1));
+    border: 1px solid rgba(0, 107, 92, 0.3);
+    border-radius: var(--radius-xl);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--spacing-lg);
+    backdrop-filter: blur(10px);
+  }
+
+  .hero-title {
+    font-size: clamp(32px, 5.5vw, 56px);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: var(--spacing-lg);
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xl);
+    max-width: 500px;
+  }
+
+  .hero-subtext {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-2xl);
+    font-size: 15px;
+    color: var(--text-secondary);
+  }
+
+  .hero-subtext .accent-text {
+    color: var(--accent);
+    font-weight: 700;
+    min-width: 120px;
+  }
+
+  .cta-group {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+  }
+
+  /* ====== BUTTONS - PREMIUM ====== */
+  .btn {
+    padding: var(--spacing-md) var(--spacing-xl);
+    border: none;
+    border-radius: var(--radius-lg);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--duration-base) var(--ease-smooth);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    letter-spacing: 0.3px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width var(--duration-base) var(--ease-smooth), height var(--duration-base) var(--ease-smooth);
+  }
+
+  .btn:hover::before {
+    width: 400px;
+    height: 400px;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--primary-light), var(--primary));
+    color: white;
+    box-shadow: 0 8px 24px rgba(0, 107, 92, 0.3);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0, 107, 92, 0.4);
+  }
+
+  .btn-secondary {
+    background: rgba(255, 107, 53, 0.15);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 107, 53, 0.25);
+    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.2);
+  }
+
+  .btn:focus {
+    outline: 2px solid var(--primary-light);
+    outline-offset: 2px;
+  }
+
+  .btn:active {
+    transform: translateY(1px);
+  }
+
+  /* ====== HERO VISUAL ====== */
+  .hero-visual {
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-visual-orb {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(0, 107, 92, 0.15), rgba(255, 107, 53, 0.08));
+    position: relative;
+    animation: float-smooth 6s ease-in-out infinite;
+  }
+
+  .hero-visual-orb::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(0, 171, 149, 0.4), transparent);
+    animation: pulse-glow 4s ease-in-out infinite;
+  }
+
+  @keyframes float-smooth {
+
+    0%,
+    100% {
+      transform: translateY(0) translateX(0);
+    }
+
+    25% {
+      transform: translateY(-20px) translateX(10px);
+    }
+
+    50% {
+      transform: translateY(-35px) translateX(-10px);
+    }
+
+    75% {
+      transform: translateY(-20px) translateX(10px);
+    }
+  }
+
+  @keyframes pulse-glow {
+
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.6;
+    }
+
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+  }
+
+  /* ====== BLOG SECTION ====== */
+  .section-header {
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .section-title {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-primary);
+  }
+
+  .section-subtitle {
+    color: var(--text-secondary);
+    font-size: 15px;
+  }
+
+  .controls {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+    margin-bottom: var(--spacing-2xl);
+    flex-wrap: wrap;
+  }
+
+  .search-container {
+    flex: 1;
+    display: flex;
+    gap: var(--spacing-sm);
+    min-width: 260px;
+    position: relative;
+  }
+
+  .search-container input {
+    flex: 1;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    color: var(--text-primary);
+    font-size: 14px;
+    transition: all var(--duration-base) var(--ease-smooth);
+    font-family: inherit;
+  }
+
+  .search-container input::placeholder {
+    color: var(--text-muted);
+  }
+
+  .search-container input:focus {
+    border-color: var(--primary-light);
+    background: var(--bg-hover);
+    box-shadow: 0 0 0 3px rgba(0, 107, 92, 0.1);
+    outline: none;
+  }
+
+  /* ====== BLOG GRID & CARDS ====== */
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .blog-card {
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(15, 23, 41, 0.5) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    cursor: pointer;
+    transition: all var(--duration-base) var(--ease-smooth);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
+  }
+
+  .blog-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+    transition: left var(--duration-slow) var(--ease-smooth);
+  }
+
+  .blog-card:hover::before {
+    left: 100%;
+  }
+
+  .blog-card:hover {
+    border-color: var(--primary-light);
+    background: linear-gradient(135deg, rgba(0, 107, 92, 0.1) 0%, rgba(15, 23, 41, 0.6) 100%);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 48px rgba(0, 107, 92, 0.2);
+  }
+
+  .blog-card:focus {
+    outline: 2px solid var(--primary-light);
+    outline-offset: -1px;
+  }
+
+  .blog-card-tag {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: rgba(0, 107, 92, 0.2);
+    color: var(--primary-light);
+    border-radius: var(--radius-sm);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--spacing-md);
+    width: fit-content;
+  }
+
+  .blog-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.4;
+    color: var(--text-primary);
+  }
+
+  .blog-card-excerpt {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.7;
+    flex-grow: 1;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .blog-card-meta {
+    display: flex;
+    gap: var(--spacing-md);
+    color: var(--text-muted);
+    font-size: 12px;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--border-light);
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: var(--spacing-3xl) var(--spacing-xl);
+    color: var(--text-muted);
+  }
+
+  .empty-state h3 {
+    font-size: 20px;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-secondary);
+  }
+
+  /* ====== POST VIEW ====== */
+  .post-container {
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(15, 23, 41, 0.5) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .post-header {
+    margin-bottom: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .post-title {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.3;
+  }
+
+  .post-meta {
+    display: flex;
+    gap: var(--spacing-lg);
+    color: var(--text-secondary);
+    font-size: 14px;
+    flex-wrap: wrap;
+  }
+
+  .post-meta-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+
+  .post-image {
+    width: 100%;
+    height: 300px;
+    border-radius: var(--radius-xl);
+    background: linear-gradient(135deg, rgba(0, 107, 92, 0.1), rgba(255, 107, 53, 0.05));
+    margin-bottom: var(--spacing-2xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+  }
+
+  .post-content {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .post-actions {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+    border-bottom: 1px solid var(--border-light);
+    flex-wrap: wrap;
+  }
+
+  .recommended-section {
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .recommended-section h4 {
+    font-size: 16px;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-secondary);
+  }
+
+  .recommended-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .recommended-posts .btn {
+    font-size: 13px;
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .comments-section {
+    margin-top: var(--spacing-2xl);
+    padding-top: var(--spacing-2xl);
+    border-top: 1px solid var(--border-light);
+  }
+
+  .comments-section h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .comment-form {
+    background: rgba(0, 107, 92, 0.05);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+  }
+
+  .comment-form input,
+  .comment-form textarea {
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 14px;
+    margin-bottom: var(--spacing-md);
+    transition: all var(--duration-base) var(--ease-smooth);
+  }
+
+  .comment-form input::placeholder,
+  .comment-form textarea::placeholder {
+    color: var(--text-muted);
+  }
+
+  .comment-form input:focus,
+  .comment-form textarea:focus {
+    border-color: var(--primary-light);
+    background: var(--bg-hover);
+    outline: none;
+  }
+
+  .comment-form textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  /* ====== FOOTER - PREMIUM ====== */
+  footer {
+    background: linear-gradient(180deg, rgba(5, 8, 18, 0.6), rgba(5, 8, 18, 0.95));
+    border-top: 1px solid var(--border-light);
+    padding: var(--spacing-3xl) var(--spacing-xl);
+    margin-top: var(--spacing-3xl);
+    backdrop-filter: blur(20px);
+  }
+
+  .footer-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .footer-section h3 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--spacing-lg);
+    color: var(--primary-light);
+  }
+
+  .footer-section a {
+    display: block;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    font-size: 14px;
+    transition: color var(--duration-base) var(--ease-smooth);
+  }
+
+  .footer-section a:hover {
+    color: var(--primary-light);
+  }
+
+  .footer-bottom {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding-top: var(--spacing-2xl);
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  /* ====== PROGRESS BAR ====== */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-light) 0%, var(--accent) 100%);
+    width: 0;
+    transition: width var(--duration-base) var(--ease-smooth);
+    z-index: 2000;
+    box-shadow: 0 0 12px rgba(0, 107, 92, 0.6);
+  }
+
+  /* ====== GREETING MODAL - PREMIUM ====== */
+  .modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    z-index: 1500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl);
+  }
+
+  .modal {
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(15, 23, 41, 0.6) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
+    animation: modal-slide-in var(--duration-base) var(--ease-smooth);
+  }
+
+  @keyframes modal-slide-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .modal h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+  }
+
+  .modal p {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.7;
+  }
+
+  .modal-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-direction: column;
+  }
+
+  /* ====== RESPONSIVE DESIGN ====== */
+  @media (max-width: 768px) {
+    .hero-section {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-2xl);
+    }
+
+    .hero-visual {
+      height: 300px;
+    }
+
+    .hero-visual-orb {
+      width: 220px;
+      height: 220px;
+    }
+
+    .section-title {
+      font-size: 24px;
+    }
+
+    .post-title {
+      font-size: 28px;
+    }
+
+    .blog-grid {
+      grid-template-columns: 1fr;
+    }
+
+    nav ul {
+      gap: var(--spacing-md);
+    }
+
+    nav a {
+      font-size: 13px;
+    }
+
+    .footer-content {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .cta-group {
+      flex-direction: column;
+    }
+
+    .cta-group .btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  /* ====== SERVICES PAGE ====== */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+  }
+
+  .service-card {
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(15, 23, 41, 0.5) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    transition: all var(--duration-base) var(--ease-smooth);
+    position: relative;
+    overflow: hidden;
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+    transition: left var(--duration-slow) var(--ease-smooth);
+  }
+
+  .service-card:hover::before {
+    left: 100%;
+  }
+
+  .service-card:hover {
+    border-color: var(--primary-light);
+    background: linear-gradient(135deg, rgba(0, 107, 92, 0.1) 0%, rgba(15, 23, 41, 0.6) 100%);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 48px rgba(0, 107, 92, 0.2);
+  }
+
+  .service-icon {
+    font-size: 48px;
+    margin-bottom: var(--spacing-lg);
+    display: inline-block;
+  }
+
+  .service-card h3 {
+    font-size: 20px;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+  }
+
+  .service-card p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.7;
+    flex-grow: 1;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .service-features {
+    list-style: none;
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-light);
+  }
+
+  .service-features li {
+    color: var(--text-secondary);
+    font-size: 13px;
+    margin-bottom: var(--spacing-sm);
+    padding-left: var(--spacing-md);
+    position: relative;
+  }
+
+  .service-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-light);
+    font-weight: 700;
+  }
+
+  /* ====== CONTACT PAGE ====== */
+  .contact-container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .contact-header {
+    text-align: center;
+    margin-bottom: var(--spacing-3xl);
+  }
+
+  .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+  }
+
+  .contact-form-section {
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(15, 23, 41, 0.5) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+  }
+
+  .contact-form-section h3 {
+    font-size: 20px;
+    margin-bottom: var(--spacing-xl);
+    color: var(--text-primary);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--bg-hover);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 14px;
+    transition: all var(--duration-base) var(--ease-smooth);
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: var(--text-muted);
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--primary-light);
+    background: rgba(0, 168, 133, 0.05);
+    box-shadow: 0 0 0 3px rgba(0, 168, 133, 0.1);
+    outline: none;
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .contact-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .contact-info-card {
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(15, 23, 41, 0.5) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+  }
+
+  .contact-icon {
+    font-size: 28px;
+    color: var(--primary-light);
+    flex-shrink: 0;
+  }
+
+  .contact-detail h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+  }
+
+  .contact-detail p,
+  .contact-detail a {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-bottom: var(--spacing-sm);
+    display: block;
+  }
+
+  .contact-detail a {
+    color: var(--primary-light);
+    font-weight: 500;
+    transition: color var(--duration-base) var(--ease-smooth);
+  }
+
+  .contact-detail a:hover {
+    color: var(--accent);
+  }
+
+  .social-links {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+  }
+
+  .social-links a {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: rgba(0, 168, 133, 0.1);
+    border: 1px solid rgba(0, 168, 133, 0.3);
+    border-radius: var(--radius-md);
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .social-links a:hover {
+    background: rgba(0, 168, 133, 0.2);
+    border-color: var(--primary-light);
+  }
+
+  /* ====== CONTACT PAGE RESPONSIVE ====== */
+  @media (max-width: 900px) {
+    .contact-content {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ====== HOME SECTIONS RESPONSIVE ====== */
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 24px;
+    }
+
+    .features-grid,
+    .projects-grid,
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .process-steps {
+      grid-template-columns: 1fr;
+    }
+
+    .process-step {
+      padding-top: var(--spacing-2xl);
+    }
+
+    .cta-section {
+      padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+
+    .cta-section h2 {
+      font-size: 24px;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+    }
+
+    .cta-buttons .btn {
+      width: 100%;
+    }
+
+    .features-section,
+    .how-it-works-section,
+    .recent-projects-section,
+    .testimonials-section {
+      padding: var(--spacing-2xl) var(--spacing-xl);
+    }
+  }
+
+  /* ====== FEATURES SECTION ====== */
+  .features-section {
+    padding: var(--spacing-3xl) var(--spacing-xl);
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 168, 133, 0.02) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+  }
+
+  .feature-card {
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(15, 23, 41, 0.5) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    transition: all var(--duration-base) var(--ease-smooth);
+    position: relative;
+    overflow: hidden;
+    min-height: 200px;
+    opacity: 0;
+  }
+
+  .feature-card:hover {
+    border-color: var(--primary-light);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 107, 92, 0.15);
+  }
+
+  .feature-icon {
+    font-size: 32px;
+    color: var(--primary-light);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .feature-card h3 {
+    font-size: 18px;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+  }
+
+  .feature-card p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* Keyframe for feature cards (same as other cards) */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ====== HOW IT WORKS (PROCESS) SECTION ====== */
+  .how-it-works-section {
+    padding: var(--spacing-3xl) var(--spacing-xl);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+    position: relative;
+    counter-reset: step-counter;
+  }
+
+  .process-step {
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(15, 23, 41, 0.5) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    position: relative;
+    padding-top: var(--spacing-3xl);
+    opacity: 0;
+  }
+
+  .process-step::before {
+    counter-increment: step-counter;
+    content: "0" counter(step-counter);
+    position: absolute;
+    top: var(--spacing-lg);
+    left: var(--spacing-xl);
+    font-size: 48px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    color: var(--primary-dark);
+    opacity: 0.2;
+    line-height: 1;
+  }
+
+  .process-step h3 {
+    font-size: 18px;
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-light);
+    position: relative;
+  }
+
+  .process-step p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ====== RECENT PROJECTS SECTION ====== */
+  .recent-projects-section {
+    padding: var(--spacing-3xl) var(--spacing-xl);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+  }
+
+  .project-card {
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(15, 23, 41, 0.5) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: all var(--duration-base) var(--ease-smooth);
+    opacity: 0;
+  }
+
+  .project-image {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, rgba(0, 107, 92, 0.1), rgba(255, 107, 53, 0.05));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+  }
+
+  .project-content {
+    padding: var(--spacing-xl);
+  }
+
+  .project-card:hover {
+    border-color: var(--primary-light);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .project-card h3 {
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+    font-size: 18px;
+  }
+
+  .project-card p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ====== TESTIMONIALS SECTION ====== */
+  .testimonials-section {
+    padding: var(--spacing-3xl) var(--spacing-xl);
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+  }
+
+  .testimonial-card {
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(15, 23, 41, 0.5) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    position: relative;
+    transition: all var(--duration-base) var(--ease-smooth);
+    opacity: 0;
+  }
+
+  .testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+    font-size: 72px;
+    font-family: "Poppins", sans-serif;
+    color: var(--primary-light);
+    opacity: 0.1;
+    line-height: 1;
+  }
+
+  .testimonial-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(255, 107, 53, 0.15);
+  }
+
+  .testimonial-text {
+    font-size: 16px;
+    font-style: italic;
+    color: var(--text-primary);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .testimonial-author {
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--border-light);
+  }
+
+  .testimonial-author h4 {
+    font-size: 16px;
+    color: var(--primary-light);
+    margin: 0;
+  }
+
+  .testimonial-author p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: var(--spacing-sm);
+  }
+
+  /* ====== CTA SECTION ====== */
+  .cta-section {
+    background: linear-gradient(135deg, rgba(0, 107, 92, 0.1), rgba(255, 107, 53, 0.05));
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-3xl);
+    text-align: center;
+    margin: var(--spacing-3xl) auto;
+  }
+
+  .cta-section h2 {
+    font-size: 32px;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .cta-section p {
+    color: var(--text-secondary);
+    font-size: 16px;
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+  }
+
+  /* ====== LIGHT MODE COMPONENT STYLES (Existing) ====== */
+  :root[data-theme="light"] header {
+    background: linear-gradient(180deg, rgba(250, 251, 252, 0.98) 0%, rgba(245, 247, 250, 0.96) 100%);
+    box-shadow: 0 2px 8px rgba(13, 17, 24, 0.1);
+    border-bottom-color: #d8dce1;
+  }
+
+  :root[data-theme="light"] .hero-section {
+    background: linear-gradient(135deg, rgba(0, 170, 153, 0.03) 0%, rgba(255, 107, 53, 0.02) 100%);
+  }
+
+  :root[data-theme="light"] .blog-card,
+  :root[data-theme="light"] .service-card,
+  :root[data-theme="light"] .project-card,
+  :root[data-theme="light"] .testimonial-card,
+  :root[data-theme="light"] .feature-card,
+  :root[data-theme="light"] .process-step,
+  :root[data-theme="light"] .modal {
+    border-color: #d8dce1;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fb 100%);
+  }
+
+  :root[data-theme="light"] .blog-card:hover,
+  :root[data-theme="light"] .service-card:hover {
+    box-shadow: 0 8px 24px rgba(13, 17, 24, 0.13);
+    border-color: var(--primary-light);
+    background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+  }
+
+  :root[data-theme="light"] .theme-toggle:hover {
+    background: rgba(0, 170, 153, 0.13);
+    border-color: var(--primary-light);
+  }
+
+  :root[data-theme="light"] .cta-section {
+    background: linear-gradient(135deg, rgba(0, 170, 153, 0.07), rgba(255, 107, 53, 0.05));
+    border: 1px solid #d8dce1;
+  }
+
+  :root[data-theme="light"] .features-section,
+  :root[data-theme="light"] .how-it-works-section,
+  :root[data-theme="light"] .recent-projects-section,
+  :root[data-theme="light"] .testimonials-section {
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 170, 153, 0.02) 100%);
+    border-bottom-color: #d8dce1;
+  }
+
+  :root[data-theme="light"] .contact-form input,
+  :root[data-theme="light"] .contact-form textarea,
+  :root[data-theme="light"] .contact-form select,
+  :root[data-theme="light"] .search-container input {
+    background: #f8f9fb;
+    border-color: #d8dce1;
+    color: var(--text-primary);
+  }
+
+  :root[data-theme="light"] .blog-card-tag {
+    background: rgba(0, 170, 153, 0.1);
+    color: var(--primary-light);
+    border: 1px solid rgba(0, 170, 153, 0.2);
+  }
+
+  :root[data-theme="light"] .modal-backdrop {
+    background: rgba(13, 17, 24, 0.5);
+  }
+
+  :root[data-theme="light"] .modal {
+    background: #ffffff;
+    border: 1px solid #d8dce1;
+    box-shadow: 0 20px 48px rgba(13, 17, 24, 0.15);
+  }
+
+  /* ====== LIGHT MODE REFINEMENTS (NEW) ====== */
+
+  :root[data-theme="light"] body {
+    /* 1. Fix: Override the dark mode gradient with a clean, light background */
+    background: var(--bg-dark);
+    background-image: none;
+  }
+
+  :root[data-theme="light"] .hero-title {
+    /* 2. Hero Title: Ensure the gradient text is dark/readable */
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  :root[data-theme="light"] .post-container,
+  :root[data-theme="light"] .contact-form-section {
+    /* 3. Section Backgrounds: Use pure white for key containers for maximum crispness */
+    background: var(--bg-card);
+    border-color: var(--border);
+  }
+  
+  :root[data-theme="light"] .contact-info-card {
+    /* Contact Info Card: Use a subtle background for the contact info card to provide contrast */
+    background: var(--bg-darker);
+    border-color: var(--border);
+  }
+
+  :root[data-theme="light"] .form-group input:focus,
+  :root[data-theme="light"] .form-group select:focus,
+  :root[data-theme="light"] .form-group textarea:focus,
+  :root[data-theme="light"] .search-container input:focus {
+    /* 4. Input Focus: Stronger primary color focus state for better feedback */
+    background: var(--bg-card);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0, 107, 92, 0.15);
+  }
+
+  :root[data-theme="light"] footer {
+    /* 5. Footer: Clean up the footer for light mode */
+    background: var(--bg-darker);
+    backdrop-filter: none;
+    box-shadow: 0 -1px 8px rgba(13, 17, 24, 0.05);
+  }
+
+  :root[data-theme="light"] .hero-visual-orb {
+    /* 6. Hero Visual: Light-friendly orb colors */
+    background: linear-gradient(135deg, rgba(0, 107, 92, 0.1), rgba(255, 107, 53, 0.05));
+  }
+  :root[data-theme="light"] .hero-visual-orb::before {
+    background: radial-gradient(circle at 30% 30%, rgba(0, 171, 149, 0.2), transparent);
+  }
+</style>
+</head>
+
+<body>
+  <!-- Progress Bar -->
+  <div class="progress-bar" id="progress"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <div class="logo-section">
+        <div class="logo-icon" aria-hidden="true">◆</div>
+        <div class="logo-text">
+          <h2>InnovateHive</h2>
+          <p>Digital Solutions</p>
         </div>
-        <nav role="navigation" aria-label="Main navigation">
-          <ul>
-            <li><a href="#home" class="nav-link">Home</a></li>
-            <li><a href="#blogs" class="nav-link">Insights</a></li>
-            <li><a href="#services" class="nav-link">Services</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-          </ul>
-        </nav>
       </div>
-    </header>
-
-    <main id="app">
-      <!-- Hero Section -->
-      <section class="hero-section" id="home-screen" role="region" aria-label="Hero section">
-        <div class="hero-content">
-          <div class="hero-badge">🚀 Web Design • AI Solutions • App Development</div>
-          <h1 class="hero-title">Transform Your Vision Into Digital Reality</h1>
-          <p class="hero-description">
-            At InnovateHive, we create cutting-edge digital solutions that elevate your business. From stunning web design to intelligent AI systems, we deliver measurable results.
-          </p>
-          <div class="hero-subtext">
-            <span>Trusted by 50+ brands</span>
-            <span class="accent-text" id="typed">Web Design</span>
-          </div>
-          <div class="cta-group">
-            <button class="btn btn-primary" id="explore-blogs">
-              Explore Our Work
-              <span>→</span>
+      <nav role="navigation" aria-label="Main navigation">
+        <ul>
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#blogs" class="nav-link">Insights</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle theme">
+              <span class="theme-icon">🌙</span>
             </button>
-            <button class="btn btn-secondary" id="our-services">
-              Learn More
-            </button>
-          </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="app">
+    <!-- Hero Section -->
+    <section class="hero-section" id="home-screen" role="region" aria-label="Hero section">
+      <div class="hero-content">
+        <div class="hero-badge">🚀 Web Design • AI Solutions • App Development</div>
+        <h1 class="hero-title">Transform Your Vision Into Digital Reality</h1>
+        <p class="hero-description">
+          At InnovateHive, we create cutting-edge digital solutions that elevate your business. From stunning web design
+          to intelligent AI systems, we deliver measurable results.
+        </p>
+        <div class="hero-subtext">
+          <span>Trusted by 50+ brands</span>
+          <span class="accent-text" id="typed">Web Design</span>
         </div>
-
-        <div class="hero-visual" aria-hidden="true">
-          <div class="hero-visual-orb"></div>
-        </div>
-      </section>
-
-      <!-- Services Section -->
-      <section id="services-screen" style="display: none">
-        <div class="section-header">
-          <h2 class="section-title">Our Services</h2>
-          <p class="section-subtitle">Comprehensive digital solutions tailored to your business needs</p>
-        </div>
-
-        <div class="services-grid" id="services-grid">
-          <!-- Services will be rendered here -->
-        </div>
-      </section>
-
-      <!-- Contact Section -->
-      <section id="contact-screen" style="display: none">
-        <div class="contact-container">
-          <div class="contact-header">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="section-subtitle">We'd love to hear from you. Let's discuss how we can help elevate your business.</p>
-          </div>
-
-          <div class="contact-content">
-            <div class="contact-form-section">
-              <h3>Send us a message</h3>
-              <form id="contact-form" class="contact-form">
-                <div class="form-group">
-                  <label for="name">Full Name</label>
-                  <input type="text" id="name" name="name" placeholder="Your name" required aria-label="Full name" />
-                </div>
-                <div class="form-group">
-                  <label for="email">Email Address</label>
-                  <input type="email" id="email" name="email" placeholder="your@email.com" required aria-label="Email address" />
-                </div>
-                <div class="form-group">
-                  <label for="phone">Phone Number</label>
-                  <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" aria-label="Phone number" />
-                </div>
-                <div class="form-group">
-                  <label for="service">Service Interested In</label>
-                  <select id="service" name="service" aria-label="Service interested in">
-                    <option value="">Select a service...</option>
-                    <option value="web">Web Development</option>
-                    <option value="app">App Development</option>
-                    <option value="ai">AI Solutions</option>
-                    <option value="seo">Website SEO</option>
-                    <option value="design">Graphic Design</option>
-                    <option value="analysis">Business Analysis</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="message">Message</label>
-                  <textarea id="message" name="message" placeholder="Tell us about your project..." rows="5" aria-label="Your message"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Send Message</button>
-              </form>
-            </div>
-
-            <div class="contact-info-section">
-              <h3>Contact Information</h3>
-              
-              <div class="contact-info-card">
-                <div class="contact-icon">📧</div>
-                <div class="contact-detail">
-                  <h4>Email</h4>
-                  <a href="mailto:innovatehive7@gmail.com">innovatehive7@gmail.com</a>
-                </div>
-              </div>
-
-              <div class="contact-info-card">
-                <div class="contact-icon">☎️</div>
-                <div class="contact-detail">
-                  <h4>Phone</h4>
-                  <a href="tel:+918767555945">+91 8767555945</a>
-                  <a href="tel:+917517326752">+91 75173 26752</a>
-                </div>
-              </div>
-
-              <div class="contact-info-card">
-                <div class="contact-icon">⏰</div>
-                <div class="contact-detail">
-                  <h4>Hours</h4>
-                  <p>Monday - Friday: 9:00 AM - 6:00 PM IST</p>
-                  <p>Saturday: 10:00 AM - 4:00 PM IST</p>
-                  <p>Sunday: Closed</p>
-                </div>
-              </div>
-
-              <div class="contact-info-card">
-                <div class="contact-icon">🌐</div>
-                <div class="contact-detail">
-                  <h4>Social Media</h4>
-                  <div class="social-links">
-                    <a href="#" aria-label="LinkedIn">LinkedIn</a>
-                    <a href="#" aria-label="Twitter">Twitter</a>
-                    <a href="#" aria-label="GitHub">GitHub</a>
-                    <a href="#" aria-label="Instagram">Instagram</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Blog Section -->
-      <section id="blogs-screen" style="display: none">
-        <div class="section-header">
-          <h2 class="section-title">Latest Insights & Projects</h2>
-          <p class="section-subtitle">Explore our portfolio of successful projects and industry insights</p>
-        </div>
-
-        <div class="controls">
-          <div class="search-container">
-            <input 
-              id="search" 
-              type="text" 
-              placeholder="Search by title or keyword..." 
-              aria-label="Search insights" 
-            />
-            <button class="btn btn-secondary" id="search-clear" style="width: auto;">Clear</button>
-          </div>
-        </div>
-
-        <div class="blog-grid" id="grid"></div>
-        <div id="empty-state" class="empty-state" style="display: none">
-          <h3>No results found</h3>
-          <p>Try adjusting your search terms to find what you're looking for.</p>
-        </div>
-      </section>
-
-      <!-- Post Section -->
-      <section id="post-screen" style="display: none">
-        <div style="margin-bottom: var(--spacing-xl)">
-          <button class="btn btn-secondary" id="back-to-blogs">
-            ← Back to Insights
+        <div class="cta-group">
+          <button class="btn btn-primary" id="explore-blogs">
+            Explore Our Work
+            <span>→</span>
+          </button>
+          <button class="btn btn-secondary" id="our-services">
+            Learn More
           </button>
         </div>
-        <article class="post-container" id="post-article" role="article">
-          <div class="post-image" id="post-heroimg" aria-hidden="true"></div>
-          <div class="post-header">
-            <h2 class="post-title" id="post-title">Post Title</h2>
-            <div class="post-meta" id="post-meta"></div>
-          </div>
-          <div class="post-content" id="post-body"></div>
+      </div>
 
-          <div class="post-actions">
-            <button class="btn btn-primary" id="share-btn">Share</button>
-            <div style="color: var(--text-secondary); font-size: 14px; display: flex; align-items: center;">
-              <span>Related:</span>
-            </div>
-          </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-visual-orb"></div>
+      </div>
+    </section>
 
-          <div class="recommended-section">
-            <h4>Recommended Reading</h4>
-            <div class="recommended-posts" id="recommended"></div>
-          </div>
+    <!-- Features Section (On Home Page) -->
+    <section id="features-section" class="features-section" style="display: none;">
+      <div class="section-header">
+        <h2 class="section-title">Why Choose InnovateHive?</h2>
+        <p class="section-subtitle">We deliver results that matter</p>
+      </div>
+      <div class="features-grid" id="features-grid"></div>
+    </section>
 
-          <div class="comments-section">
-            <h4>Comments</h4>
-            <div class="comment-form">
-              <div style="color: var(--text-secondary); margin-bottom: var(--spacing-lg); font-size: 14px;">
-                Comments are in prototype mode. In production, they'll be securely stored and moderated.
+    <!-- How It Works Section (On Home Page) -->
+    <section id="how-it-works-section" class="how-it-works-section" style="display: none;">
+      <div class="section-header">
+        <h2 class="section-title">How We Work</h2>
+        <p class="section-subtitle">A proven process for digital success</p>
+      </div>
+      <div class="process-steps" id="process-steps"></div>
+    </section>
+
+    <!-- Recent Projects Section (On Home Page) -->
+    <section id="recent-projects-section" class="recent-projects-section" style="display: none;">
+      <div class="section-header">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Showcasing our latest successful implementations</p>
+      </div>
+      <div class="projects-grid" id="projects-grid"></div>
+    </section>
+
+    <!-- Testimonials Section (On Home Page) -->
+    <section id="testimonials-section" class="testimonials-section" style="display: none;">
+      <div class="section-header">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <p class="section-subtitle">Real results from real businesses</p>
+      </div>
+      <div class="testimonials-grid" id="testimonials-grid"></div>
+    </section>
+
+    <!-- CTA Section (On Home Page) -->
+    <section id="cta-section" class="cta-section" style="display: none;">
+      <h2>Ready to Transform Your Business?</h2>
+      <p>Let's discuss your project and create something amazing together.</p>
+      <div class="cta-buttons">
+        <button class="btn btn-primary" id="cta-explore">Get Started</button>
+        <button class="btn btn-secondary" id="cta-contact">Contact Us</button>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services-screen" style="display: none">
+      <div class="section-header">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Comprehensive digital solutions tailored to your business needs</p>
+      </div>
+
+      <div class="services-grid" id="services-grid">
+        <!-- Services will be rendered here -->
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact-screen" style="display: none">
+      <div class="contact-container">
+        <div class="contact-header">
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-subtitle">We'd love to hear from you. Let's discuss how we can help elevate your business.
+          </p>
+        </div>
+
+        <div class="contact-content">
+          <div class="contact-form-section">
+            <h3>Send us a message</h3>
+            <form id="contact-form" class="contact-form">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required aria-label="Full name" />
               </div>
-              <input type="text" placeholder="Your name" aria-label="Your name" />
-              <textarea placeholder="Share your thoughts..." aria-label="Your comment"></textarea>
-              <button class="btn btn-primary">Post Comment</button>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required
+                  aria-label="Email address" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" aria-label="Phone number" />
+              </div>
+              <div class="form-group">
+                <label for="service">Service Interested In</label>
+                <select id="service" name="service" aria-label="Service interested in">
+                  <option value="">Select a service...</option>
+                  <option value="web">Web Development</option>
+                  <option value="app">App Development</option>
+                  <option value="ai">AI Solutions</option>
+                  <option value="seo">Website SEO</option>
+                  <option value="design">Graphic Design</option>
+                  <option value="analysis">Business Analysis</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell us about your project..." rows="5"
+                  aria-label="Your message"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+          </div>
+
+          <div class="contact-info-section">
+            <h3>Contact Information</h3>
+
+            <div class="contact-info-card">
+              <div class="contact-icon">📧</div>
+              <div class="contact-detail">
+                <h4>Email</h4>
+                <a href="mailto:innovatehive7@gmail.com">innovatehive7@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-icon">☎️</div>
+              <div class="contact-detail">
+                <h4>Phone</h4>
+                <a href="tel:+918767555945">+91 8767555945</a>
+                <a href="tel:+917517326752">+91 75173 26752</a>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-icon">⏰</div>
+              <div class="contact-detail">
+                <h4>Hours</h4>
+                <p>Monday - Friday: 9:00 AM - 6:00 PM IST</p>
+                <p>Saturday: 10:00 AM - 4:00 PM IST</p>
+                <p>Sunday: Closed</p>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-icon">🌐</div>
+              <div class="contact-detail">
+                <h4>Social Media</h4>
+                <div class="social-links">
+                  <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                  <a href="#" aria-label="Twitter">Twitter</a>
+                  <a href="#" aria-label="GitHub">GitHub</a>
+                  <a href="#" aria-label="Instagram">Instagram</a>
+                </div>
+              </div>
             </div>
           </div>
-        </article>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Services</h3>
-          <a href="#services">Web Development</a>
-          <a href="#services">App Development</a>
-          <a href="#services">AI Solutions</a>
-          <a href="#services">SEO & Analytics</a>
-        </div>
-        <div class="footer-section">
-          <h3>Company</h3>
-          <a href="#about">About Us</a>
-          <a href="#blogs">Our Work</a>
-          <a href="#team">Our Team</a>
-          <a href="#careers">Careers</a>
-        </div>
-        <div class="footer-section">
-          <h3>Contact</h3>
-          <a href="mailto:innovatehive7@gmail.com">innovatehive7@gmail.com</a>
-          <a href="tel:+918767555945">+91 8767555945</a>
-          <a href="tel:+917517326752">+91 75173 26752</a>
-        </div>
-        <div class="footer-section">
-          <h3>Follow Us</h3>
-          <a href="#social">LinkedIn</a>
-          <a href="#social">Twitter</a>
-          <a href="#social">GitHub</a>
-          <a href="#social">Instagram</a>
         </div>
       </div>
-      <div class="footer-bottom">
-        <div>© 2025 InnovateHive. All rights reserved.</div>
-        <div>Design • Development • Innovation</div>
-      </div>
-    </footer>
+    </section>
 
-    <!-- Blog Data (Seeded from CSV) -->
-    <script>
-      const BLOGS = [
-        {
-          id: "b1",
-          url: "https://www.innovatehive.in#blog",
-          title: "InnovateHive - Web Design, AI Solutions & App Development",
-          excerpt: "Discover how we transform ideas into impactful digital experiences with cutting-edge technology and creative excellence.",
-          body: `InnovateHive is a forward-thinking technology and digital solutions company committed to empowering startups, businesses, and brands to achieve intelligent digital growth. By integrating creativity, innovation, and AI-driven strategies, we deliver measurable and sustainable results.
+    <!-- Blog Section -->
+    <section id="blogs-screen" style="display: none">
+      <div class="section-header">
+        <h2 class="section-title">Latest Insights & Projects</h2>
+        <p class="section-subtitle">Explore our portfolio of successful projects and industry insights</p>
+      </div>
+
+      <div class="controls">
+        <div class="search-container">
+          <input id="search" type="text" placeholder="Search by title or keyword..." aria-label="Search insights" />
+          <button class="btn btn-secondary" id="search-clear" style="width: auto;">Clear</button>
+        </div>
+      </div>
+
+      <div class="blog-grid" id="grid"></div>
+      <div id="empty-state" class="empty-state" style="display: none">
+        <h3>No results found</h3>
+        <p>Try adjusting your search terms to find what you're looking for.</p>
+      </div>
+    </section>
+
+    <!-- Post Section -->
+    <section id="post-screen" style="display: none">
+      <div style="margin-bottom: var(--spacing-xl)">
+        <button class="btn btn-secondary" id="back-to-blogs">
+          ← Back to Insights
+        </button>
+      </div>
+      <article class="post-container" id="post-article" role="article">
+        <div class="post-image" id="post-heroimg" aria-hidden="true"></div>
+        <div class="post-header">
+          <h2 class="post-title" id="post-title">Post Title</h2>
+          <div class="post-meta" id="post-meta"></div>
+        </div>
+        <div class="post-content" id="post-body"></div>
+
+        <div class="post-actions">
+          <button class="btn btn-primary" id="share-btn">Share</button>
+          <div style="color: var(--text-secondary); font-size: 14px; display: flex; align-items: center;">
+            <span>Related:</span>
+          </div>
+        </div>
+
+        <div class="recommended-section">
+          <h4>Recommended Reading</h4>
+          <div class="recommended-posts" id="recommended"></div>
+        </div>
+
+        <div class="comments-section">
+          <h4>Comments</h4>
+          <div class="comment-form">
+            <div style="color: var(--text-secondary); margin-bottom: var(--spacing-lg); font-size: 14px;">
+              Comments are in prototype mode. In production, they'll be securely stored and moderated.
+            </div>
+            <input type="text" placeholder="Your name" aria-label="Your name" />
+            <textarea placeholder="Share your thoughts..." aria-label="Your comment"></textarea>
+            <button class="btn btn-primary">Post Comment</button>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Services</h3>
+        <a href="#services">Web Development</a>
+        <a href="#services">App Development</a>
+        <a href="#services">AI Solutions</a>
+        <a href="#services">SEO & Analytics</a>
+      </div>
+      <div class="footer-section">
+        <h3>Company</h3>
+        <a href="#about">About Us</a>
+        <a href="#blogs">Our Work</a>
+        <a href="#team">Our Team</a>
+        <a href="#careers">Careers</a>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <a href="mailto:innovatehive7@gmail.com">innovatehive7@gmail.com</a>
+        <a href="tel:+918767555945">+91 8767555945</a>
+        <a href="tel:+917517326752">+91 75173 26752</a>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <a href="#social">LinkedIn</a>
+        <a href="#social">Twitter</a>
+        <a href="#social">GitHub</a>
+        <a href="#social">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2025 InnovateHive. All rights reserved.</div>
+      <div>Design • Development • Innovation</div>
+    </div>
+  </footer>
+
+  <!-- Blog Data (Seeded from CSV) -->
+  <script>
+    const BLOGS = [
+      {
+        id: "b1",
+        url: "https://www.innovatehive.in#blog",
+        title: "InnovateHive - Web Design, AI Solutions & App Development",
+        excerpt: "Discover how we transform ideas into impactful digital experiences with cutting-edge technology and creative excellence.",
+        body: `InnovateHive is a forward-thinking technology and digital solutions company committed to empowering startups, businesses, and brands to achieve intelligent digital growth. By integrating creativity, innovation, and AI-driven strategies, we deliver measurable and sustainable results.
 
 Our Mission:
 Transform ideas into impactful digital experiences that drive success in the modern business landscape.
@@ -1428,14 +1970,14 @@ Advanced AI Capabilities:
 Parameters: 1.5B | Training Data: 2.8TB | Accuracy: 98.7% | Response Time: 47ms
 
 Our approach combines strategic thinking with technical expertise to ensure your digital transformation succeeds.`,
-          tags: ["Web", "AI", "Design"]
-        },
-        {
-          id: "b2",
-          url: "https://www.innovatehive.in/all-blogs",
-          title: "InnovateHive - All Blogs",
-          excerpt: "Explore our complete portfolio of successful projects, case studies, and client testimonials from the tech industry.",
-          body: `Welcome to the InnovateHive Portfolio & Insights.
+        tags: ["Web", "AI", "Design"]
+      },
+      {
+        id: "b2",
+        url: "https://www.innovatehive.in/all-blogs",
+        title: "InnovateHive - All Blogs",
+        excerpt: "Explore our complete portfolio of successful projects, case studies, and client testimonials from the tech industry.",
+        body: `Welcome to the InnovateHive Portfolio & Insights.
 
 Featured Projects Showcase:
 Khavane Kayaks — An immersive kayaking & nature-adventure website showcasing mangrove routes in Konkan, with scenic visuals and booking features.
@@ -1460,113 +2002,343 @@ Client Testimonials:
 "They captured the essence of our practice beautifully." - Dr. Prajakta Kadam Naigude
 
 Contact us: innovatehive7@gmail.com | +91 8767555945 | +91 75173 26752`,
-          tags: ["Projects", "Portfolio", "Case Studies"]
-        }
-      ];
+        tags: ["Projects", "Portfolio", "Case Studies"]
+      }
+    ];
 
-      // ====== SERVICES DATA ======
-      const SERVICES = [
-        {
-          id: "s1",
-          icon: "🌐",
-          name: "Web Development",
-          description: "We design stunning, responsive, and user-friendly websites tailored to your business needs. From e-commerce platforms to content management systems.",
-          features: [
-            "Responsive Design",
-            "SEO Optimized",
-            "Fast Performance",
-            "Security First",
-            "CMS Integration",
-            "API Development"
-          ]
-        },
-        {
-          id: "s2",
-          icon: "📱",
-          name: "App Development",
-          description: "Design intuitive and visually stunning app interfaces for Android, iOS, and cross-platform solutions with native performance.",
-          features: [
-            "iOS Development",
-            "Android Development",
-            "Cross-Platform",
-            "UI/UX Design",
-            "App Testing",
-            "App Store Deployment"
-          ]
-        },
-        {
-          id: "s3",
-          icon: "🤖",
-          name: "AI Solutions",
-          description: "Implement AI technologies like machine learning and predictive analytics to enhance innovation and automate business processes.",
-          features: [
-            "Machine Learning",
-            "Predictive Analytics",
-            "AI Chatbots",
-            "Natural Language Processing",
-            "Computer Vision",
-            "Data Analysis"
-          ]
-        },
-        {
-          id: "s4",
-          icon: "📈",
-          name: "Website SEO",
-          description: "Boost your online presence with our Website SEO services and proven optimization strategies to drive organic traffic.",
-          features: [
-            "Keyword Research",
-            "On-Page SEO",
-            "Link Building",
-            "Technical SEO",
-            "Content Strategy",
-            "Analytics & Reporting"
-          ]
-        },
-        {
-          id: "s5",
-          icon: "🎨",
-          name: "Graphic Design",
-          description: "Our team crafts compelling visuals, including logos, branding materials, and social media graphics that tell your story.",
-          features: [
-            "Logo Design",
-            "Brand Identity",
-            "Social Graphics",
-            "Print Design",
-            "UI Design",
-            "Illustration"
-          ]
-        },
-        {
-          id: "s6",
-          icon: "📊",
-          name: "Business Analysis",
-          description: "We provide actionable insights through data analysis, market research, and process optimization to drive growth.",
-          features: [
-            "Market Research",
-            "Data Analysis",
-            "Process Optimization",
-            "Strategic Planning",
-            "Competitor Analysis",
-            "Business Intelligence"
-          ]
-        }
-      ];
+    // ====== SERVICES DATA ======
+    const SERVICES = [
+      {
+        id: "s1",
+        icon: "🌐",
+        name: "Web Development",
+        description: "We design stunning, responsive, and user-friendly websites tailored to your business needs. From e-commerce platforms to content management systems.",
+        features: [
+          "Responsive Design",
+          "SEO Optimized",
+          "Fast Performance",
+          "Security First",
+          "CMS Integration",
+          "API Development"
+        ]
+      },
+      {
+        id: "s2",
+        icon: "📱",
+        name: "App Development",
+        description: "Design intuitive and visually stunning app interfaces for Android, iOS, and cross-platform solutions with native performance.",
+        features: [
+          "iOS Development",
+          "Android Development",
+          "Cross-Platform",
+          "UI/UX Design",
+          "App Testing",
+          "App Store Deployment"
+        ]
+      },
+      {
+        id: "s3",
+        icon: "🤖",
+        name: "AI Solutions",
+        description: "Implement AI technologies like machine learning and predictive analytics to enhance innovation and automate business processes.",
+        features: [
+          "Machine Learning",
+          "Predictive Analytics",
+          "AI Chatbots",
+          "Natural Language Processing",
+          "Computer Vision",
+          "Data Analysis"
+        ]
+      },
+      {
+        id: "s4",
+        icon: "📈",
+        name: "Website SEO",
+        description: "Boost your online presence with our Website SEO services and proven optimization strategies to drive organic traffic.",
+        features: [
+          "Keyword Research",
+          "On-Page SEO",
+          "Link Building",
+          "Technical SEO",
+          "Content Strategy",
+          "Analytics & Reporting"
+        ]
+      },
+      {
+        id: "s5",
+        icon: "🎨",
+        name: "Graphic Design",
+        description: "Our team crafts compelling visuals, including logos, branding materials, and social media graphics that tell your story.",
+        features: [
+          "Logo Design",
+          "Brand Identity",
+          "Social Graphics",
+          "Print Design",
+          "UI Design",
+          "Illustration"
+        ]
+      },
+      {
+        id: "s6",
+        icon: "📊",
+        name: "Business Analysis",
+        description: "We provide actionable insights through data analysis, market research, and process optimization to drive growth.",
+        features: [
+          "Market Research",
+          "Data Analysis",
+          "Process Optimization",
+          "Strategic Planning",
+          "Competitor Analysis",
+          "Business Intelligence"
+        ]
+      }
+    ];
 
-      // ====== RENDER SERVICES ======
-      function renderServices() {
-        const servicesGrid = document.getElementById("services-grid");
-        servicesGrid.innerHTML = "";
+    // ====== FEATURES DATA ======
+    const FEATURES = [
+      {
+        id: "f1",
+        icon: "⭐",
+        title: "50+ Brands Trust Us",
+        description: "Join our growing network of successful businesses that have transformed with our solutions."
+      },
+      {
+        id: "f2",
+        icon: "⚡",
+        title: "Fast Turnaround",
+        description: "We deliver results quickly without compromising on quality or innovation."
+      },
+      {
+        id: "f3",
+        icon: "👥",
+        title: "Expert Team",
+        description: "Our seasoned professionals bring years of experience across all digital domains."
+      },
+      {
+        id: "f4",
+        icon: "🔬",
+        title: "Cutting-Edge Technology",
+        description: "We stay ahead with the latest tools, frameworks, and industry best practices."
+      },
+      {
+        id: "f5",
+        icon: "🛡️",
+        title: "Security First",
+        description: "Your data and digital assets are protected with enterprise-grade security measures."
+      },
+      {
+        id: "f6",
+        icon: "🕐",
+        title: "24/7 Support",
+        description: "Our dedicated support team is always ready to help you succeed."
+      }
+    ];
 
-        SERVICES.forEach((service, idx) => {
-          const card = document.createElement("div");
-          card.className = "service-card";
-          card.tabIndex = 0;
+    // ====== PROCESS DATA ======
+    const PROCESS = [
+      {
+        id: "p1",
+        title: "Discover",
+        description: "We understand your vision, goals, and business challenges through in-depth consultation."
+      },
+      {
+        id: "p2",
+        title: "Design",
+        description: "Our creative team designs solutions that are both beautiful and functional."
+      },
+      {
+        id: "p3",
+        title: "Develop",
+        description: "We build robust, scalable solutions using cutting-edge technology and best practices."
+      },
+      {
+        id: "p4",
+        title: "Deploy",
+        description: "We launch your solution with precision and ensure smooth integration with your systems."
+      },
+      {
+        id: "p5",
+        title: "Support",
+        description: "Ongoing maintenance, updates, and support to keep your solution running smoothly."
+      }
+    ];
 
-          const featuresHtml = service.features
-            .map((f) => `<li>${escapeHtml(f)}</li>`)
-            .join("");
+    // ====== PROJECTS DATA ======
+    const PROJECTS = [
+      {
+        id: "proj1",
+        name: "Khavane Kayaks",
+        icon: "🚣",
+        description: "Adventure booking platform with real-time availability and seamless payment integration."
+      },
+      {
+        id: "proj2",
+        name: "Scuba Diving Tours",
+        icon: "🤿",
+        description: "Immersive experience booking system with safety certifications and instructor verification."
+      },
+      {
+        id: "proj3",
+        name: "Dr. Services Portal",
+        icon: "⚕️",
+        description: "Healthcare platform connecting patients with specialists, appointment booking, and telehealth."
+      },
+      {
+        id: "proj4",
+        name: "ReMed Solutions",
+        icon: "💊",
+        description: "Medical inventory management system with real-time tracking and predictive analytics."
+      },
+      {
+        id: "proj5",
+        name: "Sahayak Assistant",
+        icon: "🤝",
+        description: "AI-powered personal assistant application with natural language processing capabilities."
+      },
+      {
+        id: "proj6",
+        name: "Kisan Connect",
+        icon: "🌾",
+        description: "Farmer marketplace platform enabling direct B2C sales with weather analytics integration."
+      }
+    ];
 
-          card.innerHTML = `
+    // ====== TESTIMONIALS DATA ======
+    const TESTIMONIALS = [
+      {
+        id: "t1",
+        name: "Rohan Parab",
+        company: "Adventure Tourism Co.",
+        text: "InnovateHive transformed our online booking system. Their team was responsive, professional, and delivered beyond our expectations.",
+        rating: 5
+      },
+      {
+        id: "t2",
+        name: "Dr. Prajakta Kadam Naigude",
+        company: "Healthcare Services",
+        text: "The healthcare portal they built for us has significantly improved patient engagement. Highly recommended for medical tech solutions.",
+        rating: 5
+      },
+      {
+        id: "t3",
+        name: "Rohan Acharekar",
+        company: "Agricultural Tech Startup",
+        text: "Their AI solutions helped us optimize our supply chain and increase yields by 35%. Outstanding technical expertise!"
+      }
+    ];
+
+    // ====== RENDER FEATURES ======
+    function renderFeatures() {
+      const featuresGrid = document.getElementById("features-grid");
+      if (!featuresGrid) return;
+      featuresGrid.innerHTML = "";
+
+      FEATURES.forEach((feature, idx) => {
+        const card = document.createElement("div");
+        card.className = "feature-card";
+        card.innerHTML = `
+            <div class="feature-icon">${feature.icon}</div>
+            <h3>${escapeHtml(feature.title)}</h3>
+            <p>${escapeHtml(feature.description)}</p>
+          `;
+        featuresGrid.appendChild(card);
+
+        setTimeout(() => {
+          card.style.animation = `fadeInUp ${0.5 + idx * 0.08}s ease-out forwards`;
+        }, 0);
+      });
+    }
+
+    // ====== RENDER PROCESS ======
+    function renderProcess() {
+      const processSteps = document.getElementById("process-steps");
+      if (!processSteps) return;
+      processSteps.style.counterReset = "step-counter";
+      processSteps.innerHTML = "";
+
+      PROCESS.forEach((step, idx) => {
+        const card = document.createElement("div");
+        card.className = "process-step";
+        card.innerHTML = `
+            <h3>${escapeHtml(step.title)}</h3>
+            <p>${escapeHtml(step.description)}</p>
+          `;
+        processSteps.appendChild(card);
+
+        setTimeout(() => {
+          card.style.animation = `fadeInUp ${0.5 + idx * 0.08}s ease-out forwards`;
+        }, 0);
+      });
+    }
+
+    // ====== RENDER PROJECTS ======
+    function renderProjects() {
+      const projectsGrid = document.getElementById("projects-grid");
+      if (!projectsGrid) return;
+      projectsGrid.innerHTML = "";
+
+      PROJECTS.forEach((project, idx) => {
+        const card = document.createElement("div");
+        card.className = "project-card";
+        card.innerHTML = `
+            <div class="project-image">${project.icon}</div>
+            <div class="project-content">
+              <h3>${escapeHtml(project.name)}</h3>
+              <p>${escapeHtml(project.description)}</p>
+            </div>
+          `;
+        projectsGrid.appendChild(card);
+
+        setTimeout(() => {
+          card.style.animation = `fadeInUp ${0.5 + idx * 0.08}s ease-out forwards`;
+        }, 0);
+      });
+    }
+
+    // ====== RENDER TESTIMONIALS ======
+    function renderTestimonials() {
+      const testimonialsGrid = document.getElementById("testimonials-grid");
+      if (!testimonialsGrid) return;
+      testimonialsGrid.innerHTML = "";
+
+      TESTIMONIALS.forEach((testimonial, idx) => {
+        const card = document.createElement("div");
+        card.className = "testimonial-card";
+        const stars = "⭐".repeat(testimonial.rating || 5);
+        card.innerHTML = `
+            <div class="testimonial-text">${escapeHtml(testimonial.text)}</div>
+            <div class="testimonial-author">
+              <div class="author-avatar">${testimonial.name.charAt(0)}</div>
+              <div class="author-info">
+                <h4>${escapeHtml(testimonial.name)}</h4>
+                <p>${escapeHtml(testimonial.company)}</p>
+              </div>
+            </div>
+            <div style="margin-top: var(--spacing-md); color: var(--accent);">${stars}</div>
+          `;
+        testimonialsGrid.appendChild(card);
+
+        setTimeout(() => {
+          card.style.animation = `fadeInUp ${0.5 + idx * 0.08}s ease-out forwards`;
+        }, 0);
+      });
+    }
+
+    // ====== RENDER SERVICES ======
+    function renderServices() {
+      const servicesGrid = document.getElementById("services-grid");
+      servicesGrid.innerHTML = "";
+
+      SERVICES.forEach((service, idx) => {
+        const card = document.createElement("div");
+        card.className = "service-card";
+        card.tabIndex = 0;
+
+        const featuresHtml = service.features
+          .map((f) => `<li>${escapeHtml(f)}</li>`)
+          .join("");
+
+        card.innerHTML = `
             <div class="service-icon">${service.icon}</div>
             <h3>${escapeHtml(service.name)}</h3>
             <p>${escapeHtml(service.description)}</p>
@@ -1575,70 +2347,70 @@ Contact us: innovatehive7@gmail.com | +91 8767555945 | +91 75173 26752`,
             </ul>
           `;
 
-          servicesGrid.appendChild(card);
+        servicesGrid.appendChild(card);
 
-          setTimeout(() => {
-            card.style.animation = `fadeInUp ${0.5 + idx * 0.1}s ease-out forwards`;
-          }, 0);
+        setTimeout(() => {
+          card.style.animation = `fadeInUp ${0.5 + idx * 0.1}s ease-out forwards`;
+        }, 0);
+      });
+    }
+
+    // ====== HANDLE CONTACT FORM ======
+    document.addEventListener("DOMContentLoaded", () => {
+      const contactForm = document.getElementById("contact-form");
+      if (contactForm) {
+        contactForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const service = document.getElementById("service").value;
+          alert(`Thank you, ${name}! We've received your message and will contact you at ${email} soon. Our team will reach out regarding your ${service || 'inquiry'} within 24 hours.`);
+          contactForm.reset();
         });
       }
+    });
 
-      // ====== HANDLE CONTACT FORM ======
-      document.addEventListener("DOMContentLoaded", () => {
-        const contactForm = document.getElementById("contact-form");
-        if (contactForm) {
-          contactForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const service = document.getElementById("service").value;
-            alert(`Thank you, ${name}! We've received your message and will contact you at ${email} soon. Our team will reach out regarding your ${service || 'inquiry'} within 24 hours.`);
-            contactForm.reset();
-          });
-        }
-      });
+    // ====== UTILITY FUNCTIONS ====== (moved up in the script)
+    function escapeHtml(str) {
+      const map = {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+      };
+      return str.replace(/[&<>"']/g, (char) => map[char]);
+    }
 
-      // ====== UTILITY FUNCTIONS ====== (moved up in the script)
-      function escapeHtml(str) {
-        const map = {
-          "&": "&amp;",
-          "<": "&lt;",
-          ">": "&gt;",
-          '"': "&quot;",
-          "'": "&#039;"
-        };
-        return str.replace(/[&<>"']/g, (char) => map[char]);
-      }
+    function setProgress(percent) {
+      document.getElementById("progress").style.width = percent + "%";
+    }
 
-      function setProgress(percent) {
-        document.getElementById("progress").style.width = percent + "%";
-      }
+    // ====== APP STATE & DOM ELEMENTS ======
+    const state = { view: "home" };
+    const homeScreen = document.getElementById("home-screen");
+    const blogsScreen = document.getElementById("blogs-screen");
+    const postScreen = document.getElementById("post-screen");
+    const servicesScreen = document.getElementById("services-screen");
+    const contactScreen = document.getElementById("contact-screen");
+    const grid = document.getElementById("grid");
+    const searchInput = document.getElementById("search");
+    const emptyState = document.getElementById("empty-state");
 
-      // ====== APP STATE & DOM ELEMENTS ======
-      const state = { view: "home" };
-      const homeScreen = document.getElementById("home-screen");
-      const blogsScreen = document.getElementById("blogs-screen");
-      const postScreen = document.getElementById("post-screen");
-      const servicesScreen = document.getElementById("services-screen");
-      const contactScreen = document.getElementById("contact-screen");
-      const grid = document.getElementById("grid");
-      const searchInput = document.getElementById("search");
-      const emptyState = document.getElementById("empty-state");
+    // ====== GREETING MODAL ======
+    function showGreeting() {
+      if (localStorage.getItem("ih_greet_seen")) return;
 
-      // ====== GREETING MODAL ======
-      function showGreeting() {
-        if (localStorage.getItem("ih_greet_seen")) return;
+      const backdrop = document.createElement("div");
+      backdrop.className = "modal-backdrop";
 
-        const backdrop = document.createElement("div");
-        backdrop.className = "modal-backdrop";
+      const modal = document.createElement("div");
+      modal.className = "modal";
+      modal.setAttribute("role", "dialog");
+      modal.setAttribute("aria-modal", "true");
+      modal.setAttribute("aria-labelledby", "greeting-title");
 
-        const modal = document.createElement("div");
-        modal.className = "modal";
-        modal.setAttribute("role", "dialog");
-        modal.setAttribute("aria-modal", "true");
-        modal.setAttribute("aria-labelledby", "greeting-title");
-
-        modal.innerHTML = `
+      modal.innerHTML = `
           <h3 id="greeting-title">Welcome to InnovateHive 👋</h3>
           <p>We transform ideas into cutting-edge digital solutions. Explore our work and discover how we can elevate your business.</p>
           <div class="modal-buttons">
@@ -1648,128 +2420,145 @@ Contact us: innovatehive7@gmail.com | +91 8767555945 | +91 75173 26752`,
           </div>
         `;
 
-        document.body.appendChild(backdrop);
-        document.body.appendChild(modal);
+      document.body.appendChild(backdrop);
+      document.body.appendChild(modal);
 
-        const firstBtn = modal.querySelector("button");
-        firstBtn.focus();
+      const firstBtn = modal.querySelector("button");
+      firstBtn.focus();
 
-        const cleanup = () => {
-          backdrop.remove();
-          modal.remove();
-        };
+      const cleanup = () => {
+        backdrop.remove();
+        modal.remove();
+      };
 
-        modal.querySelector("#g-explore").addEventListener("click", () => {
-          navigate("blogs");
-          cleanup();
-        });
-        modal.querySelector("#g-no").addEventListener("click", cleanup);
-        modal.querySelector("#g-never").addEventListener("click", () => {
-          localStorage.setItem("ih_greet_seen", "1");
-          cleanup();
-        });
+      modal.querySelector("#g-explore").addEventListener("click", () => {
+        navigate("blogs");
+        cleanup();
+      });
+      modal.querySelector("#g-no").addEventListener("click", cleanup);
+      modal.querySelector("#g-never").addEventListener("click", () => {
+        localStorage.setItem("ih_greet_seen", "1");
+        cleanup();
+      });
 
-        backdrop.addEventListener("click", cleanup);
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape") cleanup();
-        });
-      }
+      backdrop.addEventListener("click", cleanup);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") cleanup();
+      });
+    }
 
-      // ====== TYPED ANIMATION ======
-      (function initTyped() {
-        const el = document.getElementById("typed");
-        const items = ["Web Design", "AI Solutions", "Mobile Apps"];
-        let itemIdx = 0,
-          charIdx = 0,
+    // ====== TYPED ANIMATION ======
+    (function initTyped() {
+      const el = document.getElementById("typed");
+      const items = ["Web Design", "AI Solutions", "Mobile Apps"];
+      let itemIdx = 0,
+        charIdx = 0,
+        direction = 1;
+
+      const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      function tick() {
+        if (prefersReduced) {
+          el.textContent = items[0];
+          return;
+        }
+
+        el.textContent = items[itemIdx].slice(0, charIdx);
+        charIdx += direction;
+
+        if (charIdx > items[itemIdx].length) {
+          direction = -1;
+          setTimeout(tick, 800);
+          return;
+        }
+
+        if (charIdx < 0) {
           direction = 1;
-
-        const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-        function tick() {
-          if (prefersReduced) {
-            el.textContent = items[0];
-            return;
-          }
-
-          el.textContent = items[itemIdx].slice(0, charIdx);
-          charIdx += direction;
-
-          if (charIdx > items[itemIdx].length) {
-            direction = -1;
-            setTimeout(tick, 800);
-            return;
-          }
-
-          if (charIdx < 0) {
-            direction = 1;
-            itemIdx = (itemIdx + 1) % items.length;
-            charIdx = 0;
-          }
-
-          setTimeout(tick, 80);
+          itemIdx = (itemIdx + 1) % items.length;
+          charIdx = 0;
         }
 
-        tick();
-      })();
-
-      // ====== ROUTER ======
-      function navigate(view, opts = {}) {
-        setProgress(8);
-        setTimeout(() => setProgress(56), 80);
-
-        homeScreen.style.display = "none";
-        blogsScreen.style.display = "none";
-        postScreen.style.display = "none";
-        servicesScreen.style.display = "none";
-        contactScreen.style.display = "none";
-
-        if (view === "home") {
-          homeScreen.style.display = "grid";
-          state.view = "home";
-        } else if (view === "blogs") {
-          blogsScreen.style.display = "block";
-          state.view = "blogs";
-          renderGrid();
-        } else if (view === "post") {
-          postScreen.style.display = "block";
-          state.view = "post";
-          renderPost(opts.id);
-        } else if (view === "services") {
-          servicesScreen.style.display = "block";
-          state.view = "services";
-          renderServices();
-        } else if (view === "contact") {
-          contactScreen.style.display = "block";
-          state.view = "contact";
-        }
-
-        window.scrollTo(0, 0);
-        setTimeout(() => setProgress(100), 200);
-        setTimeout(() => setProgress(0), 420);
+        setTimeout(tick, 80);
       }
 
-      // ====== RENDER GRID ======
-      function renderGrid() {
-        grid.innerHTML = "";
-        const query = searchInput.value.trim().toLowerCase();
-        const filtered = BLOGS.filter((b) =>
-          (b.title + " " + b.excerpt).toLowerCase().includes(query)
-        );
+      tick();
+    })();
 
-        emptyState.style.display = filtered.length === 0 ? "block" : "none";
+    // ====== ROUTER ======
+    function navigate(view, opts = {}) {
+      setProgress(8);
+      setTimeout(() => setProgress(56), 80);
 
-        filtered.forEach((b, idx) => {
-          const card = document.createElement("article");
-          card.className = "blog-card";
-          card.tabIndex = 0;
-          card.setAttribute("role", "button");
-          card.setAttribute("aria-label", `Read: ${b.title}`);
+      homeScreen.style.display = "none";
+      blogsScreen.style.display = "none";
+      postScreen.style.display = "none";
+      servicesScreen.style.display = "none";
+      contactScreen.style.display = "none";
 
-          const tagHtml = b.tags
-            .map((tag) => `<span class="blog-card-tag">${escapeHtml(tag)}</span>`)
-            .join("");
+      // Hide all home-only sections
+      document.getElementById("features-section").style.display = "none";
+      document.getElementById("how-it-works-section").style.display = "none";
+      document.getElementById("recent-projects-section").style.display = "none";
+      document.getElementById("testimonials-section").style.display = "none";
+      document.getElementById("cta-section").style.display = "none";
 
-          card.innerHTML = `
+      if (view === "home") {
+        homeScreen.style.display = "grid";
+        state.view = "home";
+        // Show all home-only sections
+        document.getElementById("features-section").style.display = "block";
+        document.getElementById("how-it-works-section").style.display = "block";
+        document.getElementById("recent-projects-section").style.display = "block";
+        document.getElementById("testimonials-section").style.display = "block";
+        document.getElementById("cta-section").style.display = "block";
+        renderFeatures();
+        renderProcess();
+        renderProjects();
+        renderTestimonials();
+      } else if (view === "blogs") {
+        blogsScreen.style.display = "block";
+        state.view = "blogs";
+        renderGrid();
+      } else if (view === "post") {
+        postScreen.style.display = "block";
+        state.view = "post";
+        renderPost(opts.id);
+      } else if (view === "services") {
+        servicesScreen.style.display = "block";
+        state.view = "services";
+        renderServices();
+      } else if (view === "contact") {
+        contactScreen.style.display = "block";
+        state.view = "contact";
+      }
+
+      window.scrollTo(0, 0);
+      setTimeout(() => setProgress(100), 200);
+      setTimeout(() => setProgress(0), 420);
+    }
+
+    // ====== RENDER GRID ======
+    function renderGrid() {
+      grid.innerHTML = "";
+      const query = searchInput.value.trim().toLowerCase();
+      const filtered = BLOGS.filter((b) =>
+        (b.title + " " + b.excerpt).toLowerCase().includes(query)
+      );
+
+      emptyState.style.display = filtered.length === 0 ? "block" : "none";
+
+      filtered.forEach((b, idx) => {
+        const card = document.createElement("article");
+        card.className = "blog-card";
+        card.tabIndex = 0;
+        card.setAttribute("role", "button");
+        card.setAttribute("aria-label", `Read: ${b.title}`);
+
+        const tagHtml = b.tags
+          .map((tag) => `<span class="blog-card-tag">${escapeHtml(tag)}</span>`)
+          .join("");
+
+        card.innerHTML = `
             ${tagHtml}
             <h3 class="blog-card-title">${escapeHtml(b.title)}</h3>
             <p class="blog-card-excerpt">${escapeHtml(b.excerpt)}</p>
@@ -1778,26 +2567,26 @@ Contact us: innovatehive7@gmail.com | +91 8767555945 | +91 75173 26752`,
             </div>
           `;
 
-          const clickHandler = () => navigate("post", { id: b.id });
-          card.addEventListener("click", clickHandler);
-          card.addEventListener("keypress", (e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              clickHandler();
-            }
-          });
-
-          grid.appendChild(card);
-
-          setTimeout(() => {
-            card.style.animation = `fadeInUp ${0.5 + idx * 0.1}s ease-out forwards`;
-          }, 0);
+        const clickHandler = () => navigate("post", { id: b.id });
+        card.addEventListener("click", clickHandler);
+        card.addEventListener("keypress", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            clickHandler();
+          }
         });
-      }
 
-      // Add fadeInUp animation
-      const style = document.createElement("style");
-      style.textContent = `
+        grid.appendChild(card);
+
+        setTimeout(() => {
+          card.style.animation = `fadeInUp ${0.5 + idx * 0.1}s ease-out forwards`;
+        }, 0);
+      });
+    }
+
+    // Add fadeInUp animation
+    const style = document.createElement("style");
+    style.textContent = `
         @keyframes fadeInUp {
           from {
             opacity: 0;
@@ -1809,94 +2598,125 @@ Contact us: innovatehive7@gmail.com | +91 8767555945 | +91 75173 26752`,
           }
         }
       `;
-      document.head.appendChild(style);
+    document.head.appendChild(style);
 
-      searchInput.addEventListener("input", renderGrid);
-      document.getElementById("search-clear").addEventListener("click", () => {
-        searchInput.value = "";
-        searchInput.focus();
-        renderGrid();
-      });
+    searchInput.addEventListener("input", renderGrid);
+    document.getElementById("search-clear").addEventListener("click", () => {
+      searchInput.value = "";
+      searchInput.focus();
+      renderGrid();
+    });
 
-      // ====== RENDER POST ======
-      function renderPost(id) {
-        const post = BLOGS.find((b) => b.id === id) || BLOGS[0];
-        document.getElementById("post-title").textContent = post.title;
-        document.getElementById("post-body").textContent = post.body;
-        document.getElementById("post-meta").innerHTML = `
+    // ====== RENDER POST ======
+    function renderPost(id) {
+      const post = BLOGS.find((b) => b.id === id) || BLOGS[0];
+      document.getElementById("post-title").textContent = post.title;
+      document.getElementById("post-body").textContent = post.body;
+      document.getElementById("post-meta").innerHTML = `
           <div class="post-meta-item">Tags: ${post.tags.join(", ")}</div>
         `;
 
-        const recDiv = document.getElementById("recommended");
-        recDiv.innerHTML = "";
-        BLOGS.filter((b) => b.id !== post.id)
-          .slice(0, 3)
-          .forEach((rec) => {
-            const btn = document.createElement("button");
-            btn.className = "btn btn-secondary";
-            btn.textContent = rec.title.slice(0, 25) + "...";
-            btn.addEventListener("click", () => navigate("post", { id: rec.id }));
-            recDiv.appendChild(btn);
-          });
+      const recDiv = document.getElementById("recommended");
+      recDiv.innerHTML = "";
+      BLOGS.filter((b) => b.id !== post.id)
+        .slice(0, 3)
+        .forEach((rec) => {
+          const btn = document.createElement("button");
+          btn.className = "btn btn-secondary";
+          btn.textContent = rec.title.slice(0, 25) + "...";
+          btn.addEventListener("click", () => navigate("post", { id: rec.id }));
+          recDiv.appendChild(btn);
+        });
+    }
+
+    document.getElementById("back-to-blogs").addEventListener("click", () => navigate("blogs"));
+
+    document.getElementById("explore-blogs").addEventListener("click", () => navigate("blogs"));
+    document.getElementById("our-services").addEventListener("click", () => {
+      alert("InnovateHive Services:\n\n✓ Web Development\n✓ App Development (iOS, Android, Cross-platform)\n✓ AI & Machine Learning\n✓ Website SEO\n✓ Graphic Design\n✓ Business Analysis\n\nContact: innovatehive7@gmail.com");
+    });
+
+    document.getElementById("cta-explore").addEventListener("click", () => navigate("blogs"));
+    document.getElementById("cta-contact").addEventListener("click", () => navigate("contact"));
+
+    document.getElementById("share-btn").addEventListener("click", () => {
+      const title = document.getElementById("post-title").textContent;
+      if (navigator.share) {
+        navigator.share({
+          title: title,
+          text: "Check out this insight from InnovateHive",
+          url: location.href
+        }).catch(() => { });
+      } else {
+        prompt("Copy link to share:", location.href);
+      }
+    });
+
+    // ====== THEME TOGGLE ======
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute("data-theme") || "dark";
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+      html.setAttribute("data-theme", newTheme);
+      localStorage.setItem("ih_theme", newTheme);
+
+      const themeIcon = document.querySelector(".theme-icon");
+      if (themeIcon) {
+        themeIcon.textContent = newTheme === "dark" ? "🌙" : "☀️";
+      }
+    }
+
+    function initTheme() {
+      const saved = localStorage.getItem("ih_theme") || "dark";
+      const html = document.documentElement;
+      html.setAttribute("data-theme", saved);
+
+      const themeIcon = document.querySelector(".theme-icon");
+      if (themeIcon) {
+        themeIcon.textContent = saved === "dark" ? "🌙" : "☀️";
+      }
+    }
+
+    const themeToggle = document.getElementById("theme-toggle");
+    if (themeToggle) {
+      themeToggle.addEventListener("click", toggleTheme);
+    }
+
+    // ====== INITIALIZE ======
+    (function mount() {
+      initTheme();
+
+      if (location.hash === "#blogs") {
+        navigate("blogs");
+      } else if (location.hash.startsWith("#post-")) {
+        const id = location.hash.replace("#post-", "");
+        navigate("post", { id });
+      } else {
+        navigate("home");
       }
 
-      document.getElementById("back-to-blogs").addEventListener("click", () => navigate("blogs"));
-
-      document.getElementById("explore-blogs").addEventListener("click", () => navigate("blogs"));
-      document.getElementById("our-services").addEventListener("click", () => {
-        alert("InnovateHive Services:\n\n✓ Web Development\n✓ App Development (iOS, Android, Cross-platform)\n✓ AI & Machine Learning\n✓ Website SEO\n✓ Graphic Design\n✓ Business Analysis\n\nContact: innovatehive7@gmail.com");
-      });
-
-      document.getElementById("share-btn").addEventListener("click", () => {
-        const title = document.getElementById("post-title").textContent;
-        if (navigator.share) {
-          navigator.share({
-            title: title,
-            text: "Check out this insight from InnovateHive",
-            url: location.href
-          }).catch(() => {});
-        } else {
-          prompt("Copy link to share:", location.href);
-        }
-      });
-
-      // ====== INITIALIZE ======
-      (function mount() {
-        try {
-          showGreeting();
-        } catch (e) {
-          console.warn("Greeting error:", e);
-        }
-
-        if (location.hash === "#blogs") {
-          navigate("blogs");
-        } else if (location.hash.startsWith("#post-")) {
-          const id = location.hash.replace("#post-", "");
-          navigate("post", { id });
-        } else {
-          navigate("home");
-        }
-
-        // Nav links
-        document.querySelectorAll("nav a").forEach((link) => {
-          link.addEventListener("click", (e) => {
-            const href = link.getAttribute("href");
-            if (href === "#home") {
-              e.preventDefault();
-              navigate("home");
-            } else if (href === "#blogs") {
-              e.preventDefault();
-              navigate("blogs");
-            } else if (href === "#services") {
-              e.preventDefault();
-              navigate("services");
-            } else if (href === "#contact") {
-              e.preventDefault();
-              navigate("contact");
-            }
-          });
+      // Nav links
+      document.querySelectorAll("nav a").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          const href = link.getAttribute("href");
+          if (href === "#home") {
+            e.preventDefault();
+            navigate("home");
+          } else if (href === "#blogs") {
+            e.preventDefault();
+            navigate("blogs");
+          } else if (href === "#services") {
+            e.preventDefault();
+            navigate("services");
+          } else if (href === "#contact") {
+            e.preventDefault();
+            navigate("contact");
+          }
         });
-      })();
-    </script>
-  </body>
+      });
+    })();
+  </script>
+</body>
+
 </html>
